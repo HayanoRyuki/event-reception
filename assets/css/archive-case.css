@@ -1,0 +1,50 @@
+/* =========================================================
+   導入事例：一覧
+========================================================= */
+
+.case-archive .archive-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.case-archive .archive-description {
+  font-size: 1.3rem;
+  color: #666;
+  margin-bottom: 2.5rem;
+}
+
+/* カードレイアウト */
+.case-archive .archive-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .case-archive .archive-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.case-article .thumb img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.case-title a {
+  color: #222;
+  text-decoration: none;
+}
+
+.case-title a:hover {
+  text-decoration: underline;
+}
+
+.case-excerpt {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  margin-top: 0.4rem;
+  color: #555;
+}

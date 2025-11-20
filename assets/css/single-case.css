@@ -1,0 +1,264 @@
+/* =========================================================
+   導入事例：本文ベース設定
+========================================================= */
+body.single-case {
+  font-size: 16px !important;
+  line-height: 1.8;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #222;
+}
+
+/* =========================================================
+   タイトル（h1）
+========================================================= */
+.single-case .page-header .page-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e5e5e5;
+  padding-bottom: 0.5rem;
+}
+
+/* 投稿日表示（helpでは非表示→caseは表示する） */
+.single-case .page-header .page-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: -0.3rem;
+}
+
+/* =========================================================
+   見出し（h2, h3）
+========================================================= */
+.single-case .article-content h2 {
+  font-size: 1.95rem;
+  font-weight: 600;
+  margin-top: 3.5rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #0073aa;
+  padding-left: 0.75rem;
+}
+
+.single-case .article-content h3 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: #0073aa;
+}
+
+/* =========================================================
+   本文余白
+========================================================= */
+.single-case main.l-main {
+  padding-bottom: 6rem !important;
+}
+
+/* =========================================================
+   一覧に戻るリンク
+========================================================= */
+.single-case .back-to-archive {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.single-case .back-to-archive-link {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 1.4rem;
+  color: #0073aa;
+  border: 1px solid #0073aa;
+  border-radius: 4px;
+  background-color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.single-case .back-to-archive-link::before {
+  content: "←";
+  margin-right: 0.5em;
+  font-weight: 700;
+}
+
+.single-case .back-to-archive-link:hover {
+  background-color: #0073aa;
+  color: #fff;
+}
+.single-case .back-to-archive-link:hover::before {
+  color: #fff;
+}
+
+/* =========================================================
+   テーブル
+========================================================= */
+.single-case table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  border: 1px solid #ccc;
+  margin: 2.5rem 0;
+  font-size: 1.5rem;
+}
+
+.single-case th,
+.single-case td {
+  vertical-align: top;
+  padding: 10px;
+  border: 1px solid #ccc;
+  word-break: break-word;
+}
+
+.single-case thead th {
+  text-align: left;
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+
+.single-case tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* スクロール対応 */
+.single-case .table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* =========================================================
+   箇条書き（ul）
+========================================================= */
+.single-case ul {
+  list-style-type: disc;
+  padding-left: 2em;
+  margin: 1.5rem 0 2rem;
+}
+
+.single-case ul ul {
+  list-style-type: circle;
+  margin-top: 0.5rem;
+}
+
+.single-case li {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================================
+   番号付きリスト
+========================================================= */
+.single-case ol {
+  counter-reset: list-counter;
+  list-style: none;
+  margin: 2rem 0;
+  padding-left: 0;
+}
+
+.single-case ol li {
+  position: relative;
+  counter-increment: list-counter;
+  background: #f9fafb;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px 16px 12px 48px;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+
+.single-case ol li::before {
+  content: counter(list-counter);
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #0073aa;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 第二階層 */
+.single-case ol ol {
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+  list-style: lower-alpha;
+}
+
+.single-case ol ol li {
+  background: none;
+  border: none;
+  padding-left: 1.2em;
+  font-size: 1.4rem;
+}
+
+.single-case ol ol li::before {
+  content: "";
+  background: none;
+}
+
+/* =========================================================
+   画像
+========================================================= */
+.single-case .article-content img {
+  display: block;
+  margin: 1.5rem auto;
+  width: auto !important;
+  max-width: 100%;
+  height: auto !important;
+}
+
+.single-case .article-content img.size-medium {
+  max-width: 50% !important;
+}
+
+.single-case .article-content img.size-thumbnail {
+  max-width: 25% !important;
+}
+
+/* =========================================================
+   2カラム
+========================================================= */
+.single-case .help-two-column {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2.5rem 0;
+  align-items: flex-start;
+}
+
+.single-case .help-two-column .help-col {
+  flex: 1 1 48%;
+  min-width: 280px;
+}
+
+/* 画像中央配置 */
+.single-case .help-two-column__image {
+  width: 100%;
+  text-align: center;
+}
+
+.single-case .help-two-column__image img {
+  display: inline-block;
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+/* =========================================================
+   スマホ対応
+========================================================= */
+@media (max-width: 768px) {
+  .single-case .help-two-column {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
