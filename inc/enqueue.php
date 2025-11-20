@@ -103,6 +103,7 @@ function eventlp_enqueue_scripts() {
     }
   }
 
+
   // シングル（help / resource）
   foreach (['help', 'resource'] as $type) {
     $path = "{$theme_dir}/assets/css/single-{$type}.css";
@@ -116,6 +117,17 @@ function eventlp_enqueue_scripts() {
     }
   }
 
+    // 導入事例（case）専用 single-case.css
+  $case_single = "{$theme_dir}/assets/css/single-case.css";
+  if (is_singular('case') && file_exists($case_single)) {
+    wp_enqueue_style(
+      'eventlp-single-case',
+      "{$theme_uri}/assets/css/single-case.css",
+      ['eventlp-style', 'eventlp-header', 'eventlp-footer'],
+      $safe_version($case_single)
+    );
+  }
+  
   /**
    * ======================
    * JS（共通 + ライブラリ）
