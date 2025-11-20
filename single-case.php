@@ -1,56 +1,86 @@
 <?php
 /**
- * 導入事例：詳細テンプレート（single-case.php）
+ * 導入事例：詳細テンプレート（2カラム版）
  */
 get_header();
 ?>
 
 <main class="l-main single-case">
-  <div class="l-inner">
+  <div class="case-2col">
 
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <!-- ▼ 左：メインコラム -->
+    <div class="case-main">
 
-      <article id="post-<?php the_ID(); ?>" <?php post_class('case-article'); ?>>
+      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-        <!-- ▼ アイキャッチ -->
-        <div class="case-thumb mb-6">
-          <?php if (has_post_thumbnail()) : ?>
-            <?php the_post_thumbnail('large'); ?>
-          <?php else : ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icatch.png" alt="">
-          <?php endif; ?>
-        </div>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('case-article'); ?>>
 
-        <!-- ▼ タイトル -->
-        <header class="page-header">
-          <h1 class="page-title"><?php the_title(); ?></h1>
+          <!-- タイトル -->
+          <header class="page-header">
+            <h1 class="page-title"><?php the_title(); ?></h1>
 
-          <p class="page-description">
-            公開日: <?php echo get_the_date(); ?>
-            <?php if (get_the_modified_date() !== get_the_date()) : ?>
-              ／ 更新日: <?php echo get_the_modified_date(); ?>
+            <p class="page-description">
+              公開日: <?php echo get_the_date(); ?>
+              <?php if (get_the_modified_date() !== get_the_date()) : ?>
+                ／ 更新日: <?php echo get_the_modified_date(); ?>
+              <?php endif; ?>
+            </p>
+          </header>
+
+          <!-- アイキャッチ -->
+          <div class="case-thumb">
+            <?php if (has_post_thumbnail()) : ?>
+              <?php the_post_thumbnail('large'); ?>
             <?php endif; ?>
-          </p>
-        </header>
-
-        <!-- ▼ 本文（中央幅を完全制御） -->
-        <div class="article-content">
-          <div class="case-container">
-            <?php the_content(); ?>
           </div>
-        </div>
 
-        <!-- ▼ 一覧へ戻る -->
-        <div class="back-to-archive">
-          <a href="<?php echo get_post_type_archive_link('case'); ?>"
-             class="back-to-archive-link">
-            導入事例一覧に戻る
-          </a>
-        </div>
+          <!-- 本文 -->
+          <div class="article-content">
+            <div class="case-container">
+              <?php the_content(); ?>
+            </div>
+          </div>
 
-      </article>
+          <!-- 一覧へ戻る -->
+          <div class="back-to-archive">
+            <a href="<?php echo get_post_type_archive_link('case'); ?>" class="back-to-archive-link">
+              導入事例一覧に戻る
+            </a>
+          </div>
 
-    <?php endwhile; endif; ?>
+        </article>
+
+      <?php endwhile; endif; ?>
+
+    </div>
+
+    <!-- ▼ 右：企業概要（メタボックス） -->
+    <aside class="case-sidebar">
+
+      <div class="case-sidebar-box">
+        <h3 class="sidebar-title">企業概要</h3>
+        <ul>
+          <?php
+          $fields = [
+            'company_name' => '企業名',
+            'industry'     => '業種',
+            'size'         => '従業員数',
+            'location'     => '所在地',
+            'plan'         => '導入プラン'
+          ];
+          foreach ($fields as $key => $label) :
+            $val = get_post_meta(get_the_ID(), $key, true);
+            if ($val) :
+          ?>
+            <li><strong><?php echo esc_html($label); ?>：</strong><?php echo esc_html($val); ?></li>
+          <?php
+            endif;
+          endforeach;
+          ?>
+        </ul>
+      </div>
+
+    </aside>
 
   </div>
 </main>

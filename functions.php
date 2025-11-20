@@ -1,32 +1,50 @@
 <?php
 /**
  * Theme Functions
- * eventLP テーマ機能設定
+ * event-reception テーマ機能設定
  */
 
-// まず確実にログを出す
+// ログ
 error_log('✅ functions.php loaded');
 
-// テーマパスを固定的に定義（子テーマでも確実に動くように）
-$theme_dir = __DIR__ . '/inc/';
+// ============================================
+// inc ディレクトリ内のファイルを一括ロード
+// ============================================
 
-// 読み込むファイル一覧を取得してログ出力
-$files = glob($theme_dir . '*.php');
-error_log('🧩 Found inc files: ' . print_r($files, true));
+$inc_dir = get_template_directory() . '/inc/';
 
-// ファイルが見つからない場合のために確認
-if (empty($files)) {
-  error_log('❌ No files found in /inc/');
+if (is_dir($inc_dir)) {
+
+    // ファイル一覧取得
+    $inc_files = glob($inc_dir . '*.php');
+
+    if (!empty($inc_files)) {
+
+        error_log('🧩 Found inc files: ' . print_r($inc_files, true));
+
+        foreach ($inc_files as $file) {
+            error_log('➡ loading: ' . basename($file));
+            require_once $file;
+        }
+
+    } else {
+        error_log('❌ No PHP files found in /inc/');
+    }
+
+} else {
+    error_log('❌ /inc directory not found!');
 }
 
-// incフォルダのすべてのphpを安全に読み込み
-foreach ($files as $file) {
-  error_log('✅ loading: ' . basename($file));
-  require_once $file;
-}
+// ※ meta-case.php も /inc に置けば自動ロードされる
+//    → 二重 require しないように削除済み
 
+
+
+// ============================================
+// ICO ファイルアップロード許可
+// ============================================
 function allow_ico_uploads($mimes) {
-  $mimes['ico'] = 'image/x-icon';
-  return $mimes;
+    $mimes['ico'] = 'image/x-icon';
+    return $mimes;
 }
 add_filter('upload_mimes', 'allow_ico_uploads');
