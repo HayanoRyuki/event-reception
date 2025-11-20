@@ -1,0 +1,150 @@
+/* ===========================================
+  通常ページ用：可読性リセット
+=========================================== */
+html {
+  font-size: 10px !important;
+}
+body {
+  font-size: 1.6rem;
+  line-height: 1.7;
+}
+
+/* ========================================
+   archive-help.css
+   ヘルプ記事一覧ページ
+======================================== */
+
+/* ベースレイアウト */
+.help-archive {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ページヘッダー */
+.help-archive .page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.help-archive .page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.help-archive .page-description {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* 投稿リスト */
+.help-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+@media (min-width: 992px) {
+  .help-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 各カード */
+.help-item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.help-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+
+/* サムネイル */
+.help-item .thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #f8f8f8;
+}
+.help-item .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.help-item:hover .thumb img {
+  transform: scale(1.05);
+}
+
+/* 本文部分 */
+.help-item .content {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.help-item h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+.help-item .excerpt {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.help-item .readmore {
+  font-size: 0.9rem;
+  color: #0073aa;
+  text-decoration: none;
+  font-weight: 600;
+}
+.help-item .readmore:hover {
+  text-decoration: underline;
+}
+
+/* ページネーション */
+.pagination {
+  text-align: center;
+  margin-top: 3rem;
+}
+.pagination .page-numbers {
+  display: inline-block;
+  margin: 0 0.25rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.pagination .page-numbers:hover {
+  background: #f0f0f0;
+}
+.pagination .current {
+  background: #0073aa;
+  color: #fff;
+  border-color: #0073aa;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  .help-archive {
+    padding: 2rem 1rem;
+  }
+  .help-list {
+    grid-template-columns: 1fr;
+  }
+  .help-item {
+    margin-bottom: 1.5rem;
+  }
+}

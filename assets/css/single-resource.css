@@ -1,0 +1,293 @@
+/* ======================================================
+   single-resource.css  固定ページ（資料請求・お問い合わせ共通）
+====================================================== */
+
+/* ------------------------------
+   ベース設定
+------------------------------ */
+.page-default,
+.single-resource {
+  background-color: #f8fafc;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ------------------------------
+   レイアウト（2カラム）
+------------------------------ */
+.resource-body {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+@media (max-width: 768px) {
+  .resource-body {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+}
+
+/* 左：本文・画像 */
+.main-column {
+  flex: 1.2;
+}
+
+.post-thumbnail {
+  margin-bottom: 2rem;
+}
+
+.post-thumbnail img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+/* 右：フォームカード */
+.form-area {
+  flex: 1;
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 768px) {
+  .form-area {
+    width: 100%;
+    margin-top: 3rem;
+  }
+}
+
+/* ------------------------------
+   タイトル・メタ情報
+------------------------------ */
+.post-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 1.5rem 0; /* ←ここを0から開始に修正 */
+  line-height: 1.4;
+}
+
+/* ページ数・更新日（1行のインラインメタ） */
+.resource-meta-inline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 1.4rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.resource-meta-inline .label-badge {
+  background: #eef3f7;
+  color: #333;
+  font-weight: 600;
+  padding: 0.3em 0.8em;
+  border-radius: 4px;
+  font-size: 1.3rem;
+}
+
+.resource-meta-inline .label-value {
+  margin-left: 0.3em;
+  font-weight: 500;
+}
+
+/* 詳細メタ情報（対象者・内容・ポイント） */
+.resource-meta {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 2.5rem;
+}
+
+.resource-meta .meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: 0.8rem;
+}
+
+.resource-meta .label-badge {
+  flex-shrink: 0;
+  background: #eef3f7;
+  color: #333;
+  font-weight: 600;
+  padding: 0.3em 0.8em;
+  border-radius: 4px;
+  font-size: 1.3rem;
+  margin-right: 0.6em;
+}
+
+.resource-meta .label-value {
+  flex: 1;
+  line-height: 1.6;
+}
+
+/* ------------------------------
+   本文
+------------------------------ */
+.post-content {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #222;
+}
+
+/* ------------------------------
+   フォーム構造
+------------------------------ */
+.request-form label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #333;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.request-form input[type="text"],
+.request-form input[type="email"],
+.request-form input[type="tel"],
+.request-form select,
+.request-form textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+.request-form input:focus,
+.request-form select:focus,
+.request-form textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.15);
+}
+
+/* 行間 */
+.form-row {
+  margin-bottom: 1.4rem;
+}
+
+.name-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.name-row div {
+  flex: 1;
+}
+
+/* ラジオ・チェックボックス */
+.radio-list,
+.checkbox-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.radio-list li,
+.checkbox-list li {
+  margin-bottom: 0.5rem;
+}
+
+.radio-list input,
+.checkbox-list input {
+  margin-right: 0.5rem;
+}
+
+/* 同意チェック */
+.check-row label {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.check-row a {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.check-row a:hover {
+  text-decoration: none;
+}
+
+/* 送信ボタン */
+.c-button {
+  display: inline-block;
+  width: 100%;
+  background-color: #ff5a5f;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.25s ease;
+}
+
+.c-button:hover {
+  background-color: #ff767a;
+}
+
+/* ------------------------------
+   余白・フォント調整
+------------------------------ */
+
+/* H1の上に余白確保 */
+.single-resource .container {
+  padding-top: 2rem; /* ←追加：H1がヘッダー下に表示される */
+}
+
+/* mainのpadding-top競合を防止 */
+.l-main.single-resource {
+  padding-top: var(--header-height, auto) !important;
+}
+
+/* LPテンプレート全体フォント調整 */
+body.single-resource,
+body.page-template-page-contact {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+body.single-resource .form-area,
+body.page-template-page-contact .form-area {
+  font-size: 1rem;
+}
+
+body.single-resource .post-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .post-title {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+  .resource-meta-inline {
+    font-size: 1.3rem;
+    gap: 1rem;
+  }
+  .resource-meta {
+    font-size: 1.3rem;
+  }
+}
+
+/* ========================================
+   優先度上書き：タイトルのマージン補正
+======================================== */
+body.single-resource .post-title {
+  margin: 2rem 0 0.5rem 22rem !important;
+}

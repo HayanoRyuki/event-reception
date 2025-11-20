@@ -1,0 +1,175 @@
+/* ===========================================
+  通常ページ用：可読性リセット
+=========================================== */
+html {
+  font-size: 10px !important; 
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   固定ページ共通スタイル（page.css）
+   対象：page-contact.php など
+======================================== */
+
+.page {
+  font-family: "Noto Sans JP", "Roboto", sans-serif;
+  line-height: 1.8;
+  color: #333;
+  background: #fff;
+}
+
+.page .container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  box-sizing: border-box;
+}
+
+.page h1,
+.page h2,
+.page h3 {
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1.2rem;
+}
+
+.page p {
+  margin-bottom: 1.6rem;
+  font-size: 1.6rem;
+}
+
+/* ----------------------------------------
+   お問い合わせフォーム系
+---------------------------------------- */
+
+.page .contact-form-area {
+  max-width: 640px;
+  margin: 3rem auto 0;
+}
+
+.page .contact-form label {
+  display: block;
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+}
+
+.page .contact-form input,
+.page .contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  box-sizing: border-box;
+  background: #fafafa;
+}
+
+.page .contact-form input:focus,
+.page .contact-form textarea:focus {
+  outline: none;
+  border-color: #0099cc;
+  background: #fff;
+}
+
+.page .contact-form button {
+  display: inline-block;
+  background: #0099cc;
+  color: #fff;
+  padding: 1rem 2.4rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.page .contact-form button:hover {
+  background: #007fb0;
+}
+
+/* ----------------------------------------
+   共通ヘッダー・フッターの間の余白
+---------------------------------------- */
+.page .l-header--lp {
+  margin-bottom: 2rem;
+}
+
+.page .lp-footer {
+  margin-top: 4rem;
+}
+
+/* ========================================
+   お問い合わせフォーム
+======================================== */
+
+.page-contact .contact-form {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.page-contact .form-row {
+  margin-bottom: 2rem;
+}
+
+.page-contact label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.page-contact input[type="text"],
+.page-contact input[type="email"],
+.page-contact input[type="tel"],
+.page-contact select,
+.page-contact textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  box-sizing: border-box;
+}
+
+.page-contact textarea {
+  resize: vertical;
+}
+
+.page-contact .radio-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page-contact .radio-list li {
+  margin-bottom: 0.4rem;
+}
+
+.page-contact .check-row label {
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+.page-contact .submit-row {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.page-contact .c-button {
+  background: #0099cc;
+  color: #fff;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.6rem;
+  transition: background 0.2s;
+}
+
+.page-contact .c-button:hover {
+  background: #007fb0;
+}

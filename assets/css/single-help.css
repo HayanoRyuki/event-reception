@@ -1,0 +1,401 @@
+/* =========================================================
+   アイキャッチ非表示
+========================================================= */
+.single-help .thumb,
+.single-help .post-thumbnail {
+  display: none !important;
+}
+
+/* =========================================================
+   本文ベース設定
+========================================================= */
+body.single-help {
+  font-size: 16px !important;
+  line-height: 1.8;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #222;
+}
+
+/* =========================================================
+   タイトル（h1）
+========================================================= */
+.single-help .page-header .page-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e5e5e5;
+  padding-bottom: 0.5rem;
+}
+
+/* 投稿日非表示 */
+.single-help .page-header .page-description {
+  display: none !important;
+}
+
+/* =========================================================
+   見出し（h2, h3）
+========================================================= */
+.single-help .article-content h2 {
+  font-size: 1.95rem;
+  font-weight: 600;
+  margin-top: 3.5rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #0073aa;
+  padding-left: 0.75rem;
+}
+
+.single-help .article-content h3 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: #0073aa;
+}
+
+/* =========================================================
+   本文余白
+========================================================= */
+.single-help main.l-main {
+  padding-bottom: 6rem !important;
+}
+
+/* =========================================================
+   一覧に戻るリンク
+========================================================= */
+.single-help .back-to-archive {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.single-help .back-to-archive-link {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 1.4rem;
+  color: #0073aa;
+  border: 1px solid #0073aa;
+  border-radius: 4px;
+  background-color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.single-help .back-to-archive-link::before {
+  content: "←";
+  margin-right: 0.5em;
+  font-weight: 700;
+}
+
+.single-help .back-to-archive-link:hover {
+  background-color: #0073aa;
+  color: #fff;
+}
+.single-help .back-to-archive-link:hover::before {
+  color: #fff;
+}
+
+/* =========================================================
+   テーブル
+========================================================= */
+.single-help table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  border: 1px solid #ccc;
+  margin: 2.5rem 0;
+  font-size: 1.5rem;
+}
+
+.single-help th,
+.single-help td {
+  vertical-align: top;
+  padding: 10px;
+  border: 1px solid #ccc;
+  word-break: break-word;
+}
+
+.single-help thead th {
+  text-align: left;
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+
+.single-help tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* スクロール対応（スマホ向け） */
+.single-help .table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* =========================================================
+   箇条書き（ul）
+========================================================= */
+.single-help ul {
+  list-style-type: disc;
+  padding-left: 2em;
+  margin: 1.5rem 0 2rem;
+}
+
+.single-help ul ul {
+  list-style-type: circle;
+  margin-top: 0.5rem;
+}
+
+.single-help li {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================================
+   番号付きリスト（デザイン強化版）
+========================================================= */
+.single-help ol {
+  counter-reset: list-counter;
+  list-style: none;
+  margin: 2rem 0;
+  padding-left: 0;
+}
+
+.single-help ol li {
+  position: relative;
+  counter-increment: list-counter;
+  background: #f9fafb;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px 16px 12px 48px;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+
+.single-help ol li::before {
+  content: counter(list-counter);
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #0073aa;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 第二階層 */
+.single-help ol ol {
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+  list-style: lower-alpha;
+}
+
+.single-help ol ol li {
+  background: none;
+  border: none;
+  padding-left: 1.2em;
+  font-size: 1.4rem;
+}
+
+.single-help ol ol li::before {
+  content: "";
+  background: none;
+}
+
+/* =========================================================
+   FAQブロック
+========================================================= */
+.single-help .faq-section {
+  margin: 3rem 0;
+  border-top: 2px solid #0073aa;
+  padding-top: 2rem;
+}
+
+.single-help .faq-item {
+  margin-bottom: 2rem;
+  padding: 1.5rem 1.5rem 1rem;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.single-help .faq-q {
+  font-weight: 600;
+  color: #0073aa;
+  margin-bottom: 0.5rem;
+}
+
+.single-help .faq-q span {
+  font-weight: 700;
+  margin-right: 0.5em;
+}
+
+.single-help .faq-a {
+  color: #333;
+  line-height: 1.8;
+}
+
+.single-help .faq-a span {
+  font-weight: 700;
+  color: #555;
+  margin-right: 0.5em;
+}
+
+/* =========================================================
+   画像サイズ調整
+========================================================= */
+.single-help .article-content img {
+  display: block;
+  margin: 1.5rem auto;
+  width: auto !important;
+  max-width: 100%;
+  height: auto !important;
+}
+
+.single-help .article-content img.size-medium {
+  max-width: 50% !important;
+}
+
+.single-help .article-content img.size-thumbnail {
+  max-width: 25% !important;
+}
+
+/* =========================================================
+   2カラムレイアウト（画像＋テキスト対応）
+========================================================= */
+.single-help .help-two-column {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2.5rem 0;
+  align-items: flex-start;
+}
+
+.single-help .help-two-column .help-col,
+.single-help .help-two-column__left,
+.single-help .help-two-column__right,
+.single-help .help-two-column__text,
+.single-help .help-two-column__image {
+  flex: 1 1 48%;
+  min-width: 280px;
+  box-sizing: border-box;
+}
+
+/* 画像中央配置 */
+.single-help .help-two-column__image {
+  width: 100%;
+  text-align: center;
+}
+
+.single-help .help-two-column__image img,
+.single-help .help-two-column .help-col img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* キャプション */
+.single-help .help-two-column__caption {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.4rem;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* 左右入れ替え */
+.single-help .help-two-column.image-left {
+  flex-direction: row;
+}
+
+.single-help .help-two-column.image-right {
+  flex-direction: row-reverse;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .single-help .help-two-column {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .single-help .help-two-column .help-col,
+  .single-help .help-two-column__left,
+  .single-help .help-two-column__right,
+  .single-help .help-two-column__text,
+  .single-help .help-two-column__image {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+}
+
+/* =========================================================
+   3カラムレイアウト（画像1／テキスト2）
+========================================================= */
+.single-help .help-three-column {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2.5rem 0;
+  align-items: flex-start;
+}
+
+/* 通常（左画像・右テキスト） */
+.single-help .help-three-column.image-left {
+  flex-direction: row;
+}
+
+/* 右画像・左テキスト */
+.single-help .help-three-column.image-right {
+  flex-direction: row-reverse;
+}
+
+.single-help .help-three-column__image {
+  flex: 0 0 30%;
+  text-align: center;
+}
+
+.single-help .help-three-column__text {
+  flex: 1 1 65%;
+}
+
+.single-help .help-three-column__image img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.single-help .help-three-column__caption {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.4rem;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* スマホでは縦並び */
+@media (max-width: 768px) {
+  .single-help .help-three-column {
+    flex-direction: column !important;
+  }
+  .single-help .help-three-column__image,
+  .single-help .help-three-column__text {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+}
