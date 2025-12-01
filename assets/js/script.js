@@ -121,15 +121,13 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 /* ===================================================
-ヘッダー高さを正確に取得して本文に余白を追加（TOPは無効）
+ヘッダー高さを正確に取得して本文に余白を追加（統合版）
 =====================================================*/
 document.addEventListener("DOMContentLoaded", function () {
   const path = window.location.pathname;
 
   // TOPページは除外
-  if (path === "/" || path === "/index.php") {
-    return;
-  }
+  if (path === "/" || path === "/index.php") return;
 
   const body = document.body;
 
@@ -137,19 +135,22 @@ document.addEventListener("DOMContentLoaded", function () {
   if (
     body.classList.contains("single-resource") ||
     body.classList.contains("page-template-page-contact")
-  ) {
-    return;
-  }
+  ) return;
 
-  const header = document.querySelector(".l-header");
   const main = document.querySelector(".l-main");
+  const header = document.querySelector(".l-header");
+  const headerAds = document.querySelector(".l-header-ads");
 
-  if (!header || !main) return;
+  if (!main) return;
 
   const setMainPadding = () => {
-    const style = window.getComputedStyle(header);
+    let targetHeader = headerAds ? headerAds : header;
+
+    if (!targetHeader) return;
+
+    const style = window.getComputedStyle(targetHeader);
     const headerHeight =
-      header.offsetHeight +
+      targetHeader.offsetHeight +
       parseFloat(style.marginTop) +
       parseFloat(style.marginBottom);
 
@@ -158,31 +159,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setMainPadding();
   window.addEventListener("resize", setMainPadding);
-
+  
   const observer = new MutationObserver(setMainPadding);
-  observer.observe(header, { attributes: true, childList: true, subtree: true });
+  if (header) observer.observe(header, { attributes: true, childList: true, subtree: true });
+  if (headerAds) observer.observe(headerAds, { attributes: true, childList: true, subtree: true });
 });
-
-
-/* ===================================================
-ヘッダー（header-ads対応）高さを正確に取得して本文に余白を追加
-=====================================================*/
-document.addEventListener("DOMContentLoaded", function () {
-  const headerAds = document.querySelector(".l-header-ads");
-  const main = document.querySelector(".l-main");
-
-  if (headerAds && main) {
-    const setMainPadding = () => {
-      const headerHeight = headerAds.getBoundingClientRect().height;
-      main.style.paddingTop = `${headerHeight}px`;
-    };
-
-    setMainPadding();
-    window.addEventListener("resize", setMainPadding);
-
-    // ヘッダー内の動的変化にも対応
-    const observer = new MutationObserver(setMainPadding);
-    observer.observe(headerAds, { attributes: true, childList: true, subtree: true });
-  }
-});
-
