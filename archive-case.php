@@ -1,6 +1,6 @@
 <?php
 /**
- * 導入事例 一覧テンプレート
+ * 導入事例 一覧テンプレート（Tailwind排除・純CSS版）
  */
 get_header();
 ?>
@@ -8,21 +8,21 @@ get_header();
 <main class="l-main case-archive">
   <div class="l-inner">
 
-    <header class="archive-header mb-8">
+    <header class="archive-header">
       <h1 class="archive-title">導入事例一覧</h1>
-      <p class="archive-description text-gray-600 text-sm">
+      <p class="archive-description">
         「招待レセプション」をご利用いただいた企業様の事例をご紹介します。
       </p>
     </header>
 
     <?php if (have_posts()) : ?>
-      <div class="archive-list grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div class="archive-list">
 
         <?php while (have_posts()) : the_post(); ?>
           <article id="post-<?php the_ID(); ?>" <?php post_class('case-article'); ?>>
 
             <!-- ▼ アイキャッチ -->
-            <div class="thumb mb-4">
+            <div class="thumb">
               <a href="<?php the_permalink(); ?>">
                 <?php if (has_post_thumbnail()) : ?>
                   <?php the_post_thumbnail('large'); ?>
@@ -33,12 +33,12 @@ get_header();
             </div>
 
             <!-- ▼ タイトル -->
-            <h2 class="case-title text-lg font-bold mb-2">
+            <h2 class="case-title">
               <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </h2>
 
             <!-- ▼ 抜粋 -->
-            <p class="case-excerpt text-sm text-gray-600">
+            <p class="case-excerpt">
               <?php echo wp_trim_words(get_the_excerpt(), 32); ?>
             </p>
 
@@ -47,8 +47,7 @@ get_header();
 
       </div>
 
-      <!-- ▼ ページネーション -->
-      <div class="pagination mt-12">
+      <div class="pagination">
         <?php the_posts_pagination(); ?>
       </div>
 

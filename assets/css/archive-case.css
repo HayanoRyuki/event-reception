@@ -1,48 +1,51 @@
 /* =========================================================
-   導入事例：アーカイブ一覧（case-archive）
+   導入事例 アーカイブ一覧
 ========================================================= */
 
-/* 全体レイアウト */
+/* 全体 */
 .case-archive {
-  padding: 60px 0;
-  background: #fafafa;
+  padding: 80px 0;
+  background: #ffffff;
 }
 
-.case-archive .l-inner {
-  width: min(1080px, 92%);
-  margin: 0 auto;
+.archive-header {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-/* 見出し */
 .archive-title {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: var(--color-primary);
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .archive-description {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #666;
-  line-height: 1.6;
 }
 
-/* 一覧グリッド（Tailwindの補強） */
+/* 一覧グリッド */
 .archive-list {
-  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 1024px) {
   .archive-list {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* カード（case-article） */
+@media (max-width: 640px) {
+  .archive-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* カード */
 .case-article {
-  display: flex;
-  flex-direction: column;
-  max-width: 100%;
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
@@ -64,13 +67,15 @@
 
 /* タイトル */
 .case-title a {
+  display: block;
   font-size: 1.3rem;
   font-weight: 700;
-  margin: 16px 20px 10px;
-  line-height: 1.5;
-  display: block;
   color: var(--color-text);
+  text-decoration: none;
+  margin: 20px;
+  line-height: 1.4;
 }
+
 .case-title a:hover {
   color: var(--color-primary-hover);
 }
@@ -78,13 +83,13 @@
 /* 抜粋 */
 .case-excerpt {
   font-size: 0.95rem;
-  padding: 0 20px 20px;
   color: #666;
+  padding: 0 20px 20px;
   line-height: 1.6;
 }
 
 /* ページネーション */
 .pagination {
-  text-align: center;
   margin-top: 40px;
+  text-align: center;
 }
