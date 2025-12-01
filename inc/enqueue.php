@@ -128,6 +128,18 @@ function eventlp_enqueue_scripts() {
     );
   }
   
+    // 導入事例（case）アーカイブのCSS
+  $case_archive = "{$theme_dir}/assets/css/archive-case.css";
+  if (is_post_type_archive('case') && file_exists($case_archive)) {
+    wp_enqueue_style(
+      'eventlp-archive-case',
+      "{$theme_uri}/assets/css/archive-case.css",
+      ['eventlp-style', 'eventlp-header', 'eventlp-footer'],
+      $safe_version($case_archive)
+    );
+  }
+
+  
   /**
    * ======================
    * JS（共通 + ライブラリ）

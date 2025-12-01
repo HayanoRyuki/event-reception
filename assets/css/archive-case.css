@@ -1,50 +1,88 @@
 /* =========================================================
-   導入事例：一覧
+   導入事例：アーカイブ一覧（case-archive）
 ========================================================= */
 
-.case-archive .archive-title {
-  font-size: 2.2rem;
+/* 全体レイアウト */
+.case-archive {
+  padding: 60px 0;
+  background: #fafafa;
+}
+
+.case-archive .l-inner {
+  width: min(1080px, 92%);
+  margin: 0 auto;
+}
+
+/* 見出し */
+.archive-title {
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+  margin-bottom: 6px;
 }
 
-.case-archive .archive-description {
-  font-size: 1.3rem;
+.archive-description {
+  font-size: 0.95rem;
   color: #666;
-  margin-bottom: 2.5rem;
+  line-height: 1.6;
 }
 
-/* カードレイアウト */
-.case-archive .archive-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
+/* 一覧グリッド（Tailwindの補強） */
+.archive-list {
+  margin-top: 40px;
 }
 
-@media (max-width: 768px) {
-  .case-archive .archive-list {
-    grid-template-columns: 1fr;
+@media (min-width: 768px) {
+  .archive-list {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.case-article .thumb img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
+/* カード（case-article） */
+.case-article {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  transition: transform .25s ease, box-shadow .25s ease;
+  padding-bottom: 20px;
 }
 
+.case-article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+}
+
+/* サムネイル */
+.case-article .thumb img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* タイトル */
 .case-title a {
-  color: #222;
+  color: var(--color-text);
   text-decoration: none;
+  display: inline-block;
+  margin: 0 20px;
 }
 
 .case-title a:hover {
-  text-decoration: underline;
+  color: var(--color-primary-hover);
 }
 
+/* 抜粋 */
 .case-excerpt {
-  font-size: 1.4rem;
-  line-height: 1.7;
-  margin-top: 0.4rem;
-  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding: 0 20px;
+  color: #666;
+}
+
+/* ページネーション */
+.pagination {
+  text-align: center;
+  margin-top: 40px;
 }
