@@ -128,36 +128,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // TOPページは除外
   if (path === "/" || path === "/index.php") {
-    console.log("Skip header padding on TOP:", path);
     return;
   }
 
-  // ✅ LP（single-resource / page-contact）を除外
   const body = document.body;
+
+  // LP除外
   if (
     body.classList.contains("single-resource") ||
     body.classList.contains("page-template-page-contact")
   ) {
-    console.log("Skip header padding on LP:", path);
     return;
   }
 
   const header = document.querySelector(".l-header");
   const main = document.querySelector(".l-main");
 
-  if (header && main) {
-    const setMainPadding = () => {
-      const headerHeight = header.getBoundingClientRect().height;
-      main.style.paddingTop = `${headerHeight}px`;
-    };
+  if (!header || !main) return;
 
-    setMainPadding();
-    window.addEventListener("resize", setMainPadding);
+  const setMainPadding = () => {
+    const style = window.getComputedStyle(header);
+    const headerHeight =
+      header.offsetHeight +
+      parseFloat(style.marginTop) +
+      parseFloat(style.marginBottom);
 
-    const observer = new MutationObserver(setMainPadding);
-    observer.observe(header, { attributes: true, childList: true, subtree: true });
-  }
+    main.style.paddingTop = `${headerHeight}px`;
+  };
+
+  setMainPadding();
+  window.addEventListener("resize", setMainPadding);
+
+  const observer = new MutationObserver(setMainPadding);
+  observer.observe(header, { attributes: true, childList: true, subtree: true });
 });
+
 
 /* ===================================================
 ヘッダー（header-ads対応）高さを正確に取得して本文に余白を追加
