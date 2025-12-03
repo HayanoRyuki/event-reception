@@ -99,3 +99,44 @@
   margin-top: 40px;
   text-align: center;
 }
+
+/* ============================================
+   CASE アーカイブ：文字サイズ & レイアウト調整
+============================================= */
+
+/* タイトル強調 */
+.case-archive .case-title a {
+  font-size: 2.0rem;        /* ← 1.6rem → 2.0rem */
+  font-weight: 700;
+  margin: 20px;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+/* 抜粋を読みやすく */
+.case-archive .case-excerpt {
+  font-size: 1.4rem;        /* ← 1.2rem → 1.4rem */
+  line-height: 1.75;
+  color: #555;
+  padding: 0 20px 24px;
+}
+
+/* グリッド幅調整（HELP と統一感を持たせる） */
+.case-archive .archive-list {
+  max-width: 1140px;        /* ← HELP の幅と合わせる */
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+}
+
+@media (max-width: 1024px) {
+  .case-archive .archive-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .case-archive .archive-list {
+    grid-template-columns: 1fr;
+  }
+}
