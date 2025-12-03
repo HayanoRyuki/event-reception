@@ -51,7 +51,7 @@ body.single-case {
 }
 
 .single-case .page-description {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #666;
   margin-bottom: 2rem;
 }
@@ -214,7 +214,6 @@ body.single-case {
 /* =========================================================
    導入事例：2カラムレイアウト
 ========================================================= */
-
 .case-2col {
   display: flex;
   gap: 40px;
@@ -242,16 +241,23 @@ body.single-case {
 }
 
 .case-sidebar-box .sidebar-title {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
   border-bottom: 2px solid #0073aa;
   padding-bottom: .3rem;
 }
 
+/* ===== 企業概要（メタボックス）文字サイズUP ===== */
 .case-sidebar-box ul li {
-  margin-bottom: .7rem;
-  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.case-sidebar-box ul li strong {
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 /* モバイル：1カラム */

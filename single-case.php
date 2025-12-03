@@ -20,10 +20,7 @@ get_header();
             <h1 class="page-title"><?php the_title(); ?></h1>
 
             <p class="page-description">
-              公開日: <?php echo get_the_date(); ?>
-              <?php if (get_the_modified_date() !== get_the_date()) : ?>
-                ／ 更新日: <?php echo get_the_modified_date(); ?>
-              <?php endif; ?>
+              公開日: <?php echo get_the_date('Y年n月j日'); ?>
             </p>
           </header>
 
