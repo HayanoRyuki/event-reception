@@ -74,7 +74,7 @@
 /* タイトル */
 .case-title a {
   display: block;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--color-text);
   text-decoration: none;
@@ -88,7 +88,7 @@
 
 /* 抜粋 */
 .case-excerpt {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   color: #666;
   padding: 0 20px 20px;
   line-height: 1.6;
