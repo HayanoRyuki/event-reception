@@ -140,3 +140,29 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================
+   CASE アーカイブ：ヘッダーの文字サイズ強化
+============================================ */
+.case-archive .archive-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* ページタイトル */
+.case-archive .archive-title {
+  font-size: 3.0rem;      /* ← 大きく！ */
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+/* ページ説明文 */
+.case-archive .archive-description {
+  font-size: 1.6rem;      /* ← かなり読みやすい */
+  color: #555;
+  line-height: 1.7;
+  max-width: 720px;       /* 中央に整える */
+  margin: 0 auto;
+}
