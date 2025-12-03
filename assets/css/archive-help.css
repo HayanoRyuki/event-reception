@@ -148,3 +148,27 @@ body {
     margin-bottom: 1.5rem;
   }
 }
+
+/* ================================
+   HELP アーカイブ：文字サイズ補強
+================================ */
+
+/* カードタイトル（h2）を大きく */
+.help-archive .help-item h2 {
+  font-size: 1.6rem;   /* ← 今 1.2rem → 1.6rem（約+33%） */
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+}
+
+/* 抜粋の文字サイズを補強 */
+.help-archive .help-item .excerpt {
+  font-size: 1.3rem;   /* ← 今 0.95rem → 1.3rem（かなり見やすい） */
+  line-height: 1.7;
+  color: #444;
+}
+
+/* READ MORE も少しだけ強調 */
+.help-archive .help-item .readmore {
+  font-size: 1.1rem;   /* ← 今 0.9rem → 読みやすく */
+}
