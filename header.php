@@ -19,12 +19,16 @@
   <title><?php bloginfo('name'); ?></title>
   <meta name="description" content="<?php bloginfo('description'); ?>" />
 
-  <!--OGP設定-->
+  <!-- ▼ OGP設定（修正済み：assets/images/ogp.png） -->
   <meta property="og:title" content="<?php bloginfo('name'); ?>" />
   <meta property="og:description" content="<?php bloginfo('description'); ?>" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="<?php echo esc_url(home_url('/')); ?>" />
-  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets/img/ogp.png" />
+  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets/images/ogp.png" />
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="<?php echo get_template_directory_uri(); ?>/assets/images/ogp.png" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
