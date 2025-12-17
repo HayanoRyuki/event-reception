@@ -48,3 +48,13 @@ function allow_ico_uploads($mimes) {
     return $mimes;
 }
 add_filter('upload_mimes', 'allow_ico_uploads');
+
+// ============================================
+// favicon を wp_head の最後に強制出力（Chrome対策）
+// ============================================
+add_action('wp_head', function () {
+    ?>
+    <link rel="icon" type="image/png"
+          href="<?php echo get_template_directory_uri(); ?>/assets/img/icon_3c.png?v=20251217">
+    <?php
+}, 999);
