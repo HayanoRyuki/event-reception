@@ -44,16 +44,15 @@
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Poppins:wght@700&family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap"
     rel="stylesheet">
 
-  <!-- favicon（PC / iOS / Android すべて直指定） -->
-  <link rel="icon" type="image/png" sizes="32x32"
-        href="<?php echo get_template_directory_uri(); ?>/assets/images/icon_3c.png">
-  <link rel="icon" type="image/png" sizes="16x16"
-        href="<?php echo get_template_directory_uri(); ?>/assets/images/icon_3c.png">
-  <link rel="apple-touch-icon"
-        href="<?php echo get_template_directory_uri(); ?>/assets/images/icon_3c.png">
-  <link rel="icon" sizes="192x192"
-        href="<?php echo get_template_directory_uri(); ?>/assets/images/icon_3c.png">
-
+  <!-- favicon -->
+<link rel="icon" type="image/png" sizes="32x32"
+      href="<?php echo get_template_directory_uri(); ?>/assets/img/icon_3c.png">
+<link rel="icon" type="image/png" sizes="16x16"
+      href="<?php echo get_template_directory_uri(); ?>/assets/img/icon_3c.png">
+<link rel="apple-touch-icon"
+      href="<?php echo get_template_directory_uri(); ?>/assets/img/icon_3c.png">
+<link rel="icon" sizes="192x192"
+      href="<?php echo get_template_directory_uri(); ?>/assets/img/icon_3c.png">
   <?php wp_head(); ?>
 </head>
 
