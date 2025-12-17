@@ -32,6 +32,26 @@
   <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets/img/ogp.png" />
 
   <?php wp_head(); ?>
+
+  <!-- PC / ブラウザ用 favicon（明示指定） -->
+<link rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="<?php echo get_template_directory_uri(); ?>/assets/images/icon_3c.png">
+
+<link rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="<?php echo get_template_directory_uri(); ?>/assets/images/icon_3c.png">
+
+<!-- iOS / Android 用アイコン -->
+<link rel="apple-touch-icon"
+      href="<?php echo get_template_directory_uri(); ?>/assets/images/icon_3c.png">
+
+<link rel="icon"
+      sizes="192x192"
+      href="<?php echo get_template_directory_uri(); ?>/assets/images/icon_3c.png">
+
 </head>
 
 <body <?php body_class('lp-page'); ?>>
