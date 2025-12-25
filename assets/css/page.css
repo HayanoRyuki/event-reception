@@ -2,7 +2,7 @@
   通常ページ用：可読性リセット
 =========================================== */
 html {
-  font-size: 10px !important; 
+  font-size: 10px !important;
 }
 
 body {
@@ -13,14 +13,14 @@ body {
 
 /* ========================================
    固定ページ共通スタイル（page.css）
-   対象：page-contact.php など
+   対象：通常固定ページ / 問い合わせ etc
 ======================================== */
 
 .page {
   font-family: "Noto Sans JP", "Roboto", sans-serif;
   line-height: 1.8;
-  color: #333;
-  background: #fff;
+  color: var(--color-text);
+  background: var(--color-bg);
 }
 
 .page .container {
@@ -30,11 +30,14 @@ body {
   box-sizing: border-box;
 }
 
+/* ----------------------------------------
+   タイポグラフィ
+---------------------------------------- */
 .page h1,
 .page h2,
 .page h3 {
   font-weight: 700;
-  color: #222;
+  color: var(--color-text);
   margin-bottom: 1.2rem;
 }
 
@@ -43,8 +46,9 @@ body {
   font-size: 1.6rem;
 }
 
+
 /* ----------------------------------------
-   お問い合わせフォーム系
+   お問い合わせフォーム系 共通
 ---------------------------------------- */
 
 .page .contact-form-area {
@@ -62,7 +66,7 @@ body {
 .page .contact-form textarea {
   width: 100%;
   padding: 0.8rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-gray-4);
   border-radius: 4px;
   font-size: 1.4rem;
   box-sizing: border-box;
@@ -72,13 +76,13 @@ body {
 .page .contact-form input:focus,
 .page .contact-form textarea:focus {
   outline: none;
-  border-color: #0099cc;
+  border-color: var(--color-primary);
   background: #fff;
 }
 
 .page .contact-form button {
   display: inline-block;
-  background: #0099cc;
+  background: var(--color-primary);
   color: #fff;
   padding: 1rem 2.4rem;
   border: none;
@@ -89,11 +93,12 @@ body {
 }
 
 .page .contact-form button:hover {
-  background: #007fb0;
+  background: var(--color-primary-hover);
 }
 
+
 /* ----------------------------------------
-   共通ヘッダー・フッターの間の余白
+   共通ヘッダー・フッター余白
 ---------------------------------------- */
 .page .l-header--lp {
   margin-bottom: 2rem;
@@ -103,8 +108,9 @@ body {
   margin-top: 4rem;
 }
 
+
 /* ========================================
-   お問い合わせフォーム
+   問い合わせフォーム詳細設計
 ======================================== */
 
 .page-contact .contact-form {
@@ -129,7 +135,7 @@ body {
 .page-contact textarea {
   width: 100%;
   padding: 0.8rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-gray-4);
   border-radius: 4px;
   font-size: 1.5rem;
   box-sizing: border-box;
@@ -159,8 +165,9 @@ body {
   margin-top: 3rem;
 }
 
+/* submit ボタンは c-button 方針に合わせる */
 .page-contact .c-button {
-  background: #0099cc;
+  background: var(--color-primary);
   color: #fff;
   border: none;
   padding: 1rem 2.5rem;
@@ -171,5 +178,5 @@ body {
 }
 
 .page-contact .c-button:hover {
-  background: #007fb0;
+  background: var(--color-primary-hover);
 }

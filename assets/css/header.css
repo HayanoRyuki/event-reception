@@ -1,7 +1,6 @@
 /* ============================================================
    Header（ヘッダー）
-   ファイル: assets/css/header.css
-   読み込み: enqueue.php にて常時
+   assets/css/header.css
 ============================================================ */
 
 /* ----------------------------------
@@ -12,8 +11,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-gray-4);
   z-index: 1000;
   transition: background-color 0.3s ease;
 }
@@ -56,21 +55,16 @@
   padding: 0;
 }
 
-.l-header__nav-list li {
-  margin: 0;
-  padding: 0;
-}
-
 .l-header__nav-list a {
-  color: #222;
-  font-size: 15px;
-  font-weight: 600;
+  color: var(--color-text);
+  font-size: 1.4rem;
+  font-weight: 700;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .l-header__nav-list a:hover {
-  color: #007acc;
+  color: var(--color-primary-hover);
 }
 
 /* ----------------------------------
@@ -79,43 +73,54 @@
 .l-header__nav-cta {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 1.6rem;
 }
 
-/* 枠付きボタン */
-.c-button__header--frame {
-  display: inline-block;
-  padding: 10px 24px;
-  border: 2px solid #007acc;
-  color: #007acc;
-  border-radius: 4px;
-  font-weight: 700;
-  font-size: 14px;
-  background-color: #fff;
-  text-decoration: none;
-  transition: all 0.25s ease;
-}
-
-.c-button__header--frame:hover {
-  background-color: #007acc;
-  color: #fff;
-}
-
-/* 塗りボタン */
+/* =======================
+   CTA ボタン
+======================= */
 .c-button__header {
-  display: inline-block;
-  padding: 10px 24px;
-  background-color: #007acc;
-  color: #fff;
-  border-radius: 4px;
+  height: 4.8rem;
+  border-radius: 100vmax;
+  font-size: 1.4rem;
   font-weight: 700;
-  font-size: 14px;
-  text-decoration: none;
-  transition: all 0.25s ease;
+  white-space: nowrap;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 13.8rem;
+  padding-inline: 1.2rem;
+  background: var(--color-primary);
+  border: 0.2rem solid transparent;
+  transition: 0.25s ease;
 }
 
 .c-button__header:hover {
-  background-color: #005fa3;
+  background: var(--color-primary-hover);
+}
+
+/* 枠付き */
+.c-button__header--frame {
+  height: 4.8rem;
+  border-radius: 100vmax;
+  font-size: 1.4rem;
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16.6rem;
+  padding-inline: 1.2rem;
+  background: var(--color-bg);
+  border: 0.2rem solid var(--color-primary);
+  transition: 0.25s ease;
+}
+
+.c-button__header--frame:hover {
+  background: var(--color-primary);
+  color: #ffffff;
 }
 
 /* ----------------------------------
@@ -124,7 +129,7 @@
 .l-header.is-fixed {
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(6px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 /* ----------------------------------
@@ -150,358 +155,12 @@
   }
 }
 
-/* ヘッダー
-***************************************************************/
-.l-header {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  background-color: #ffffff;
-}
-
-.l-header__inner {
-  display: grid;
-  grid-template-columns: 19.8rem 1fr;
-  gap: 5.2rem;
-  padding-inline: 4.8rem;
-  padding-block: 2rem 2.2rem;
-  max-width: 128rem;
-  margin-inline: auto;
-  align-items: center;
-  height: 9.4rem;
-}
-@media screen and (max-width: 767px) {
-  .l-header__inner {
-    grid-template-columns: 12.2rem 1fr;
-    padding-inline: 2rem;
-    padding-block: 1.6rem 3.2rem;
-    height: 8rem;
-  }
-}
-
-.l-header__logo {
-  width: 19.8rem;
-}
-@media screen and (max-width: 767px) {
-  .l-header__logo {
-    width: 12.2rem;
-  }
-}
-
-.l-header__nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2.9rem;
-}
-@media screen and (max-width: 767px) {
-  .l-header__nav {
-    display: none;
-  }
-}
-
-.l-header__nav-list {
-  display: flex;
-  align-items: center;
-  gap: 2.4rem;
-}
-.l-header__nav-list a {
-  font-size: 1.3rem;
-  font-weight: 700;
-  line-height: 1.6;
-  letter-spacing: 0em;
-  white-space: nowrap;
-}
-@media screen and (max-width: 767px) {
-  .l-header__nav-list a {
-    font-size: 1.3rem;
-  }
-}
-@media (any-hover: hover) {
-  .l-header__nav-list a:hover {
-    opacity: 0.7;
-  }
-}
-
-/* 共通ボタン
-***************************************************************/
-.c-button {
-  height: 4.8rem;
-  border-radius: 100vmax;
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 1.2142857143;
-  letter-spacing: 0em;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  justify-content: flex-end;
-  width: 16.2rem;
-  padding-inline: 1.2rem;
-  background: #EA526F;
-  border: 0.2rem solid transparent;
-}
-@media screen and (max-width: 767px) {
-  .c-button {
-    font-size: 1.4rem;
-  }
-}
-.c-button::after {
-  content: "";
-  width: 2.4rem;
-  height: 2.4rem;
-  background: url(../img/icon_button-arrow--white.webp) no-repeat center center/contain;
-}
-@media (any-hover: hover) {
-  .c-button:hover {
-    opacity: 0.7;
-  }
-}
-
-.c-button__header {
-  height: 4.8rem;
-  border-radius: 100vmax;
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 1.2142857143;
-  letter-spacing: 0em;
-  white-space: nowrap;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 13.8rem;
-  padding-inline: 1.2rem;
-  background: #EA526F;
-  border: 0.2rem solid transparent;
-}
-@media screen and (max-width: 767px) {
-  .c-button__header {
-    font-size: 1.4rem;
-  }
-}
-@media (any-hover: hover) {
-  .c-button__header:hover {
-    opacity: 0.7;
-  }
-}
-
-.c-button__header--frame {
-  height: 4.8rem;
-  border-radius: 100vmax;
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 1.2142857143;
-  letter-spacing: 0em;
-  white-space: nowrap;
-  color: #0098BB;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 16.6rem;
-  padding-inline: 1.2rem;
-  background: #ffffff;
-  border: 0.2rem solid #0098BB;
-}
-@media screen and (max-width: 767px) {
-  .c-button__header--frame {
-    font-size: 1.4rem;
-  }
-}
-@media (any-hover: hover) {
-  .c-button__header--frame:hover {
-    background: #0098BB;
-    color: #ffffff;
-  }
-}
-
-.c-button__fv {
-  height: 4.8rem;
-  border-radius: 100vmax;
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 1.2142857143;
-  letter-spacing: 0em;
-  white-space: nowrap;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  gap: 1.8rem;
-  justify-content: flex-end;
-  width: 19rem;
-  padding-inline: 1.6rem;
-  background: #EA526F;
-  border: 0.2rem solid transparent;
-}
-@media screen and (max-width: 767px) {
-  .c-button__fv {
-    font-size: 1.4rem;
-  }
-}
-.c-button__fv::after {
-  content: "";
-  width: 2.4rem;
-  height: 2.4rem;
-  background: url(../img/icon_button-arrow--white.webp) no-repeat center center/contain;
-}
-@media (any-hover: hover) {
-  .c-button__fv:hover {
-    opacity: 0.7;
-  }
-}
-@media screen and (max-width: 767px) {
-  .c-button__fv {
-    width: 16.15rem;
-    height: 5.6rem;
-    justify-content: center;
-  }
-  .c-button__fv::after {
-    display: none;
-  }
-}
-
-.c-button__fv--frame {
-  height: 4.8rem;
-  border-radius: 100vmax;
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 1.2142857143;
-  letter-spacing: 0em;
-  white-space: nowrap;
-  color: #0098BB;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  justify-content: flex-end;
-  width: 19rem;
-  padding-inline: 1.6rem;
-  background: #ffffff;
-  border: 0.2rem solid #0098BB;
-}
-@media screen and (max-width: 767px) {
-  .c-button__fv--frame {
-    font-size: 1.4rem;
-  }
-}
-.c-button__fv--frame::after {
-  content: "";
-  width: 2.4rem;
-  height: 2.4rem;
-  background: url(../img/icon_button-arrow--blue.webp) no-repeat center center/contain;
-  transition: all 0.3s ease;
-}
-@media (any-hover: hover) {
-  .c-button__fv--frame:hover {
-    background: #0098BB;
-    color: #ffffff;
-  }
-  .c-button__fv--frame:hover::after {
-    background: url(../img/icon_button-arrow--white.webp) no-repeat center center/contain;
-  }
-}
-@media screen and (max-width: 767px) {
-  .c-button__fv--frame {
-    width: 16.15rem;
-    height: 5.6rem;
-    justify-content: center;
-  }
-  .c-button__fv--frame::after {
-    display: none;
-  }
-}
-
-.c-button__large {
-  height: 4.8rem;
-  border-radius: 100vmax;
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 1.2142857143;
-  letter-spacing: 0.03em;
-  white-space: nowrap;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  gap: 3.95rem;
-  justify-content: flex-end;
-  width: 27.5rem;
-  padding-inline: 1.6rem;
-  background: #EA526F;
-  border: 0.2rem solid transparent;
-}
-@media screen and (max-width: 767px) {
-  .c-button__large {
-    font-size: 1.4rem;
-  }
-}
-.c-button__large::after {
-  content: "";
-  width: 2.4rem;
-  height: 2.4rem;
-  background: url(../img/icon_button-arrow--white.webp) no-repeat center center/contain;
-}
-@media (any-hover: hover) {
-  .c-button__large:hover {
-    opacity: 0.7;
-  }
-}
-
-.c-button__large--frame {
-  height: 4.8rem;
-  border-radius: 100vmax;
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 1.2142857143;
-  letter-spacing: -0.03em;
-  white-space: nowrap;
-  color: #0098BB;
-  display: flex;
-  align-items: center;
-  gap: 3.95rem;
-  justify-content: flex-end;
-  width: 27.5rem;
-  padding-inline: 1.2rem;
-  background: #ffffff;
-  border: 0.2rem solid #0098BB;
-}
-@media screen and (max-width: 767px) {
-  .c-button__large--frame {
-    font-size: 1.4rem;
-  }
-}
-.c-button__large--frame::after {
-  content: "";
-  width: 2.4rem;
-  height: 2.4rem;
-  background: url(../img/icon_button-arrow--blue.webp) no-repeat center center/contain;
-}
-@media (any-hover: hover) {
-  .c-button__large--frame:hover {
-    background: #0098BB;
-    color: #ffffff;
-  }
-  .c-button__large--frame:hover::after {
-    background: url(../img/icon_button-arrow--white.webp) no-repeat center center/contain;
-  }
-}
-
-/* ヘッダー用CTA
-***************************************************************/
-.l-header__nav-cta {
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
-}
-
-/* ========================================
-   LPヘッダー／フッター専用スタイル
-======================================== */
-
+/* ----------------------------------
+   LP 専用（既存仕様維持）
+---------------------------------- */
 .lp-page .l-header--lp {
-  background: #fff;
-  border-bottom: 1px solid #eee;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-gray-4);
   padding: 1.5rem 0;
   text-align: center;
 }
@@ -516,5 +175,3 @@
   max-width: 240px;
   height: auto;
 }
-
-

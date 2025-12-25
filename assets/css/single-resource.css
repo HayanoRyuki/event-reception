@@ -7,7 +7,7 @@
 ------------------------------ */
 .page-default,
 .single-resource {
-  background-color: #f8fafc;
+  background-color: var(--color-gray-0);
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -50,7 +50,7 @@
 /* 右：フォームカード */
 .form-area {
   flex: 1;
-  background: #fff;
+  background: var(--color-bg);
   padding: 2.5rem 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
@@ -69,8 +69,8 @@
 .post-title {
   font-size: 2.6rem;
   font-weight: 700;
-  color: #222;
-  margin: 0 0 1.5rem 0; /* ←ここを0から開始に修正 */
+  color: var(--color-text);
+  margin: 0 0 1.5rem 0;
   line-height: 1.4;
 }
 
@@ -81,13 +81,13 @@
   flex-wrap: wrap;
   gap: 1.5rem;
   font-size: 1.4rem;
-  color: #555;
+  color: var(--color-gray-7);
   margin-bottom: 1.5rem;
 }
 
 .resource-meta-inline .label-badge {
-  background: #eef3f7;
-  color: #333;
+  background: var(--color-gray-1);
+  color: var(--color-text);
   font-weight: 600;
   padding: 0.3em 0.8em;
   border-radius: 4px;
@@ -102,7 +102,7 @@
 /* 詳細メタ情報（対象者・内容・ポイント） */
 .resource-meta {
   font-size: 1.4rem;
-  color: #333;
+  color: var(--color-text);
   margin-bottom: 2.5rem;
 }
 
@@ -115,8 +115,8 @@
 
 .resource-meta .label-badge {
   flex-shrink: 0;
-  background: #eef3f7;
-  color: #333;
+  background: var(--color-gray-1);
+  color: var(--color-text);
   font-weight: 600;
   padding: 0.3em 0.8em;
   border-radius: 4px;
@@ -135,7 +135,7 @@
 .post-content {
   font-size: 1.5rem;
   line-height: 1.8;
-  color: #222;
+  color: var(--color-text);
 }
 
 /* ------------------------------
@@ -144,7 +144,7 @@
 .request-form label {
   font-weight: 600;
   font-size: 0.95rem;
-  color: #333;
+  color: var(--color-text);
   display: block;
   margin-bottom: 0.4rem;
 }
@@ -156,9 +156,9 @@
 .request-form textarea {
   width: 100%;
   padding: 0.7rem 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-gray-4);
   border-radius: 6px;
-  background: #fff;
+  background: var(--color-bg);
   font-size: 0.95rem;
   box-sizing: border-box;
 }
@@ -167,7 +167,7 @@
 .request-form select:focus,
 .request-form textarea:focus {
   outline: none;
-  border-color: #3b82f6;
+  border-color: var(--color-primary);
   box-shadow: 0 0 0 2px rgba(59,130,246,0.15);
 }
 
@@ -206,11 +206,11 @@
 /* 同意チェック */
 .check-row label {
   font-size: 0.9rem;
-  color: #555;
+  color: var(--color-gray-7);
 }
 
 .check-row a {
-  color: #3b82f6;
+  color: var(--color-primary);
   text-decoration: underline;
 }
 
@@ -222,7 +222,7 @@
 .c-button {
   display: inline-block;
   width: 100%;
-  background-color: #ff5a5f;
+  background-color: var(--color-accent);
   color: #fff;
   font-weight: 700;
   text-align: center;
@@ -235,7 +235,7 @@
 }
 
 .c-button:hover {
-  background-color: #ff767a;
+  background-color: var(--color-accent-light);
 }
 
 /* ------------------------------
@@ -244,7 +244,7 @@
 
 /* H1の上に余白確保 */
 .single-resource .container {
-  padding-top: 2rem; /* ←追加：H1がヘッダー下に表示される */
+  padding-top: 2rem;
 }
 
 /* mainのpadding-top競合を防止 */
@@ -276,10 +276,12 @@ body.single-resource .post-title {
     font-size: 2rem;
     margin-top: 1rem;
   }
+
   .resource-meta-inline {
     font-size: 1.3rem;
     gap: 1rem;
   }
+
   .resource-meta {
     font-size: 1.3rem;
   }

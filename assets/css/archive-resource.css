@@ -8,6 +8,8 @@ html {
 body {
   font-size: 1.6rem;
   line-height: 1.7;
+  background: var(--color-bg);
+  color: var(--color-text);
 }
 
 /* ===========================================
@@ -21,19 +23,25 @@ body {
 
 .resource-archive li {
   list-style: none;
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-gray-5);
   border-radius: 8px;
   padding: 16px;
-  background-color: #fff;
-  transition: box-shadow 0.2s ease;
+  background-color: var(--color-bg);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .resource-archive li:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
 }
 
 .resource-archive a {
-  color: #333;
+  color: var(--color-text);
   font-weight: 600;
   text-decoration: none;
+  transition: color .2s ease;
+}
+
+.resource-archive a:hover {
+  color: var(--color-primary-hover);
 }

@@ -1,53 +1,50 @@
 <?php
 /**
  * enqueue.php
- * CSS・JS読み込み設定（統合安定版）
+ * CSS・JS読み込み設定（style.css を使わない版）
  */
 
 function eventlp_enqueue_scripts() {
   $theme_dir = get_template_directory();
   $theme_uri = get_template_directory_uri();
 
-  /**
-   * ======================
-   * 共通関数
-   * ======================
-   */
+  // ======================
+  // 共通関数
+  // ======================
   $safe_version = function (string $abs_path) {
     return file_exists($abs_path) ? (filemtime($abs_path) ?: '1.0') : '1.0';
   };
 
-  /**
-   * ======================
-   * 共通CSS（常時読み込み）
-   * ======================
-   */
 
-  // ベース style.css
-  $base = "{$theme_dir}/assets/css/style.css";
-  if (file_exists($base)) {
+  // ======================
+  // 共通CSS（常時読み込み）
+  // ======================
+
+  // ★ common.css（全ページのベースCSS）
+  $common = "{$theme_dir}/assets/css/common.css";
+  if (file_exists($common)) {
     wp_enqueue_style(
-      'eventlp-style',
-      "{$theme_uri}/assets/css/style.css",
+      'eventlp-common',
+      "{$theme_uri}/assets/css/common.css",
       [],
-      $safe_version($base)
+      $safe_version($common)
     );
   }
 
-  // header.css / footer.css
+  // header / footer
   foreach (['header', 'footer'] as $part) {
     $path = "{$theme_dir}/assets/css/{$part}.css";
     if (file_exists($path)) {
       wp_enqueue_style(
         "eventlp-{$part}",
         "{$theme_uri}/assets/css/{$part}.css",
-        ['eventlp-style'],
+        ['eventlp-common'],
         $safe_version($path)
       );
     }
   }
 
-  // Swiper（共通ライブラリCSS）
+  // Swiper CSS
   $swiper_css = "{$theme_dir}/assets/lib/swiper-bundle.min.css";
   if (file_exists($swiper_css)) {
     wp_enqueue_style(
@@ -58,95 +55,91 @@ function eventlp_enqueue_scripts() {
     );
   }
 
-  /**
-   * ======================
-   * ページ別CSS
-   * ======================
-   */
 
-// front-page template 専用 CSS
-if ( is_page_template('front-page.php') ) {
-  $path = "{$theme_dir}/assets/css/front-page.css";
-  if (file_exists($path)) {
-    wp_enqueue_style(
-      'eventlp-front',
-      "{$theme_uri}/assets/css/front-page.css",
-      ['eventlp-style', 'eventlp-header', 'eventlp-footer', 'swiper-css'],
-      $safe_version($path)
-    );
+  // ======================
+  // ページ別CSS
+  // ======================
+
+  // Front Page
+  if ( is_front_page() || is_page_template('front-page.php') ) {
+    $path = "{$theme_dir}/assets/css/front-page.css";
+    if (file_exists($path)) {
+      wp_enqueue_style(
+        'eventlp-front',
+        "{$theme_uri}/assets/css/front-page.css",
+        ['eventlp-common', 'eventlp-header', 'eventlp-footer', 'swiper-css'],
+        $safe_version($path)
+      );
+    }
   }
-}
 
-  // 固定ページ（共通 page.css）
+  // 固定ページ
   if (is_page() && !is_front_page()) {
     $path = "{$theme_dir}/assets/css/page.css";
     if (file_exists($path)) {
       wp_enqueue_style(
         'eventlp-page',
         "{$theme_uri}/assets/css/page.css",
-        ['eventlp-style', 'eventlp-header', 'eventlp-footer'],
+        ['eventlp-common', 'eventlp-header', 'eventlp-footer'],
         $safe_version($path)
       );
     }
   }
 
-  // アーカイブ（help / resource）
+  // アーカイブ
   foreach (['help', 'resource'] as $type) {
     $path = "{$theme_dir}/assets/css/archive-{$type}.css";
     if (is_post_type_archive($type) && file_exists($path)) {
       wp_enqueue_style(
         "eventlp-archive-{$type}",
         "{$theme_uri}/assets/css/archive-{$type}.css",
-        ['eventlp-style', 'eventlp-header', 'eventlp-footer'],
+        ['eventlp-common', 'eventlp-header', 'eventlp-footer'],
         $safe_version($path)
       );
     }
   }
 
-
-  // シングル（help / resource）
+  // シングル
   foreach (['help', 'resource'] as $type) {
     $path = "{$theme_dir}/assets/css/single-{$type}.css";
     if (is_singular($type) && file_exists($path)) {
       wp_enqueue_style(
         "eventlp-single-{$type}",
         "{$theme_uri}/assets/css/single-{$type}.css",
-        ['eventlp-style', 'eventlp-header', 'eventlp-footer'],
+        ['eventlp-common', 'eventlp-header', 'eventlp-footer'],
         $safe_version($path)
       );
     }
   }
 
-    // 導入事例（case）専用 single-case.css
+  // case single
   $case_single = "{$theme_dir}/assets/css/single-case.css";
   if (is_singular('case') && file_exists($case_single)) {
     wp_enqueue_style(
       'eventlp-single-case',
       "{$theme_uri}/assets/css/single-case.css",
-      ['eventlp-style', 'eventlp-header', 'eventlp-footer'],
+      ['eventlp-common', 'eventlp-header', 'eventlp-footer'],
       $safe_version($case_single)
     );
   }
-  
-    // 導入事例（case）アーカイブのCSS
+
+  // case archive
   $case_archive = "{$theme_dir}/assets/css/archive-case.css";
   if (is_post_type_archive('case') && file_exists($case_archive)) {
     wp_enqueue_style(
       'eventlp-archive-case',
       "{$theme_uri}/assets/css/archive-case.css",
-      ['eventlp-style', 'eventlp-header', 'eventlp-footer'],
+      ['eventlp-common', 'eventlp-header', 'eventlp-footer'],
       $safe_version($case_archive)
     );
   }
 
-  
-  /**
-   * ======================
-   * JS（共通 + ライブラリ）
-   * ======================
-   */
 
-  // 共通スクリプト
+  // ======================
+  // JS
+  // ======================
+
+  // 共通 script
   $script = "{$theme_dir}/assets/js/script.js";
   if (file_exists($script)) {
     wp_enqueue_script(
@@ -158,7 +151,7 @@ if ( is_page_template('front-page.php') ) {
     );
   }
 
-  // Swiper JS
+  // Swiper
   $swiper_js = "{$theme_dir}/assets/lib/swiper-bundle.min.js";
   if (file_exists($swiper_js)) {
     wp_enqueue_script(

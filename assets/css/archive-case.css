@@ -5,7 +5,7 @@
 /* 全体 */
 .case-archive {
   padding: 80px 0;
-  background: #ffffff;
+  background: var(--color-bg);
 }
 
 .archive-header {
@@ -22,7 +22,7 @@
 
 .archive-description {
   font-size: 1rem;
-  color: #666;
+  color: var(--color-gray-6);
 }
 
 /* 一覧グリッド */
@@ -46,7 +46,7 @@
 
 /* カード */
 .case-article {
-  background: #fff;
+  background: var(--color-bg);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 14px rgba(0,0,0,0.06);
@@ -61,12 +61,12 @@
 /* サムネイル */
 .case-article .thumb {
   width: 100%;
-  height: auto; /* ← これを追加 */
+  height: auto;
 }
 
 .case-article .thumb img {
   width: 100%;
-  height: auto; /* ← 高さを固定しない */
+  height: auto;
   object-fit: cover;
   display: block;
 }
@@ -89,7 +89,7 @@
 /* 抜粋 */
 .case-excerpt {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--color-gray-6);
   padding: 0 20px 20px;
   line-height: 1.6;
 }
@@ -106,7 +106,7 @@
 
 /* タイトル強調 */
 .case-archive .case-title a {
-  font-size: 2.0rem;        /* ← 1.6rem → 2.0rem */
+  font-size: 2.0rem;
   font-weight: 700;
   margin: 20px;
   line-height: 1.5;
@@ -115,15 +115,15 @@
 
 /* 抜粋を読みやすく */
 .case-archive .case-excerpt {
-  font-size: 1.4rem;        /* ← 1.2rem → 1.4rem */
+  font-size: 1.4rem;
   line-height: 1.75;
-  color: #555;
+  color: var(--color-gray-6);
   padding: 0 20px 24px;
 }
 
-/* グリッド幅調整（HELP と統一感を持たせる） */
+/* グリッド幅調整 */
 .case-archive .archive-list {
-  max-width: 1140px;        /* ← HELP の幅と合わせる */
+  max-width: 1140px;
   margin: 0 auto;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.4rem;
@@ -151,7 +151,7 @@
 
 /* ページタイトル */
 .case-archive .archive-title {
-  font-size: 3.0rem;      /* ← 大きく！ */
+  font-size: 3.0rem;
   font-weight: 800;
   color: var(--color-primary);
   margin-bottom: 12px;
@@ -160,9 +160,9 @@
 
 /* ページ説明文 */
 .case-archive .archive-description {
-  font-size: 1.6rem;      /* ← かなり読みやすい */
-  color: #555;
+  font-size: 1.6rem;
+  color: var(--color-gray-6);
   line-height: 1.7;
-  max-width: 720px;       /* 中央に整える */
+  max-width: 720px;
   margin: 0 auto;
 }

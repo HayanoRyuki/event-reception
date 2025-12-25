@@ -1,0 +1,327 @@
+/***************************************************************
+ *  COMMON CSS  （全ページ共通）
+ *  - カラー変数
+ *  - Reset / Base
+ *  - Layout
+ *  - Components（共通ボタン含む）
+ ***************************************************************/
+
+
+/* =========================================================
+   Root Color Variables
+========================================================= */
+:root {
+  --color-primary: #EA526F;
+  --color-primary-dark: #d1445e;
+
+  --color-brand-blue: #0098BB;
+  --color-brand-blue-dark: #007da0;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-text-main: #333333;
+  --color-text-sub: #666666;
+
+  --bg-light: #f7f7f7;
+  --bg-darker: #e7eef3;
+}
+
+
+/* =========================================================
+   Reset & Base
+========================================================= */
+
+/* ---- 追加：強化Reset（footer.css から移動） ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+li,
+dt,
+dd,
+p,
+div,
+span,
+img,
+a,
+table,
+tr,
+th,
+td,
+small,
+button,
+time,
+figure {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+header,
+footer,
+nav,
+section,
+article,
+main,
+aside,
+figure,
+figcaption {
+  display: block;
+}
+
+img {
+  border: none;
+  vertical-align: bottom;
+}
+
+/* ---- 基本 ---- */
+html {
+  font-size: 62.5%;
+  scroll-padding-top: 9.4rem;
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    scroll-padding-top: 8rem;
+  }
+}
+
+body {
+  font-family: "Noto Sans JP", "Roboto", "DM Sans", sans-serif;
+  font-size: 1.6rem;
+  color: var(--color-text-main);
+  background: #ffffff;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: .3s;
+}
+
+picture,
+video,
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* PC時：telリンク無効 */
+@media (min-width: 768px) {
+  a[href*="tel:"] {
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+
+/* =========================================================
+   Animation Utility
+========================================================= */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(2.5rem);
+  transition: opacity 1s, transform 1s;
+}
+.fade-in-up.is-in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   Layout Utility
+========================================================= */
+.l-main {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 9.4rem;
+}
+
+@media screen and (max-width: 767px) {
+  .l-main {
+    margin-top: 8rem;
+  }
+}
+
+.l-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* PC / SP display helpers */
+.u-pc {
+  display: block;
+}
+.u-sp {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .u-pc {
+    display: none;
+  }
+  .u-sp {
+    display: block;
+  }
+}
+
+
+/***************************************************************
+ *  Buttons  （共通ボタン系 ここが root カラー化済み）
+ ***************************************************************/
+
+/* ===== 基本ボタン ===== */
+.c-button {
+  height: 4.8rem;
+  border-radius: 100vmax;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  justify-content: flex-end;
+  width: 16.2rem;
+  padding-inline: 1.2rem;
+  background: var(--color-primary);
+  border: 0.2rem solid transparent;
+}
+.c-button::after {
+  content: "";
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url(../img/icon_button-arrow--white.webp) no-repeat center center/contain;
+}
+@media (any-hover: hover) {
+  .c-button:hover { opacity: .7; }
+}
+
+
+/* ===== Header Buttons ===== */
+.c-button__header {
+  height: 4.8rem;
+  border-radius: 100vmax;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 13.8rem;
+  background: var(--color-primary);
+}
+@media (any-hover: hover) {
+  .c-button__header:hover { opacity:.7; }
+}
+
+.c-button__header--frame {
+  height: 4.8rem;
+  border-radius: 100vmax;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-brand-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16.6rem;
+  background: var(--color-white);
+  border: 0.2rem solid var(--color-brand-blue);
+}
+@media (any-hover: hover) {
+  .c-button__header--frame:hover {
+    background: var(--color-brand-blue);
+    color: var(--color-white);
+  }
+}
+
+
+/* ===== FV Buttons ===== */
+.c-button__fv {
+  height: 4.8rem;
+  border-radius:100vmax;
+  font-size:1.4rem;
+  font-weight:700;
+  color:#fff;
+  display:flex;
+  gap:1.8rem;
+  align-items:center;
+  justify-content:flex-end;
+  width:19rem;
+  padding-inline:1.6rem;
+  background:var(--color-primary);
+}
+.c-button__fv::after{
+  content:"";
+  width:2.4rem;
+  height:2.4rem;
+  background:url(../img/icon_button-arrow--white.webp) no-repeat center/contain;
+}
+
+.c-button__fv--frame {
+  height:4.8rem;
+  border-radius:100vmax;
+  font-size:1.4rem;
+  font-weight:700;
+  color:var(--color-brand-blue);
+  display:flex;
+  gap:.4rem;
+  justify-content:flex-end;
+  width:19rem;
+  padding-inline:1.6rem;
+  background:#fff;
+  border:.2rem solid var(--color-brand-blue);
+}
+
+
+/* ===== Large CTA ===== */
+.c-button__large {
+  height: 4.8rem;
+  border-radius:100vmax;
+  font-size:1.4rem;
+  font-weight:700;
+  color:#fff;
+  display:flex;
+  gap:3.95rem;
+  justify-content:flex-end;
+  width:27.5rem;
+  background:var(--color-primary);
+}
+.c-button__large::after{
+  content:"";
+  width:2.4rem;
+  height:2.4rem;
+  background:url(../img/icon_button-arrow--white.webp);
+}
+
