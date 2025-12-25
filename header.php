@@ -20,9 +20,6 @@
   </script>
   <!-- End Google Tag Manager -->
 
-  <!-- 検索にヒットしないようにするための記述です -->
-  <meta name="robots" content="noindex" />
-
   <title><?php bloginfo('name'); ?></title>
   <meta name="description" content="<?php bloginfo('description'); ?>" />
 
