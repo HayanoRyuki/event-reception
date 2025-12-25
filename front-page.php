@@ -16,6 +16,5 @@ Template Name: Landing Front
 <?php get_template_part('sections/case-study'); ?>
 <?php get_template_part('sections/plan'); ?>
 <?php get_template_part('sections/faq'); ?>
-<?php get_template_part('sections/footer'); ?>
 
 <?php get_footer(); ?>
