@@ -65,7 +65,7 @@ function eventlp_enqueue_scripts() {
    */
 
   // front-page
-  if (is_front_page()) {
+if ( is_front_page() || is_home() || is_page(10) ) {
     $path = "{$theme_dir}/assets/css/front-page.css";
     if (file_exists($path)) {
       wp_enqueue_style(
@@ -75,7 +75,7 @@ function eventlp_enqueue_scripts() {
         $safe_version($path)
       );
     }
-  }
+}
 
   // 固定ページ（共通 page.css）
   if (is_page() && !is_front_page()) {
