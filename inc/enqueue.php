@@ -64,17 +64,17 @@ function eventlp_enqueue_scripts() {
    * ======================
    */
 
-  // front-page
-if ( is_front_page() || is_home() || is_page(10) ) {
-    $path = "{$theme_dir}/assets/css/front-page.css";
-    if (file_exists($path)) {
-      wp_enqueue_style(
-        'eventlp-front',
-        "{$theme_uri}/assets/css/front-page.css",
-        ['eventlp-style', 'eventlp-header', 'eventlp-footer', 'swiper-css'],
-        $safe_version($path)
-      );
-    }
+// front-page template 専用 CSS
+if ( is_page_template('front-page.php') ) {
+  $path = "{$theme_dir}/assets/css/front-page.css";
+  if (file_exists($path)) {
+    wp_enqueue_style(
+      'eventlp-front',
+      "{$theme_uri}/assets/css/front-page.css",
+      ['eventlp-style', 'eventlp-header', 'eventlp-footer', 'swiper-css'],
+      $safe_version($path)
+    );
+  }
 }
 
   // 固定ページ（共通 page.css）

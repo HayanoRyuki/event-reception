@@ -1,5 +1,11 @@
+<?php
+/*
+Template Name: Landing Front
+*/
+?>
+
 <!-- USING front-page.php -->
- <?php get_header(); ?>
+<?php get_header(); ?>
 
 <?php get_template_part('sections/fv'); ?>
 <?php get_template_part('sections/about'); ?>
