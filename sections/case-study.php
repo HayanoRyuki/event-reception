@@ -17,36 +17,106 @@
 
     <div class="p-case-study__container">
 
+<?php
+// ▼ 導入事例（case）から 1件取得
+$case = get_posts([
+  'post_type'      => 'case',
+  'posts_per_page' => 1,
+  'post_status'    => 'publish'
+]);
+
+if ($case) :
+  $case_id = $case[0]->ID;
+
+  // 企業ロゴ（single-case と同じメタキー）
+  $logo_id  = get_post_meta($case_id, '_company_logo_id', true);
+  $logo_url = $logo_id ? wp_get_attachment_url($logo_id) : '';
+?>
       <!-- ================================
-           ★ 表示する 1件目 ONLY
+           ★ 表示する 1件目 ONLY（動的）
       ================================= -->
-      <a href="https://staging.event.receptionist.jp/case/receptionist/"
+      <a href="<?php echo get_permalink($case_id); ?>"
          class="p-case-study__item">
 
         <div class="p-case-study__item-img img01">
-          <img
-            src="https://staging.event.receptionist.jp/wp-content/uploads/2025/11/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88-2025-11-26-10.30.09.png"
-            loading="lazy"
-            alt="RECEPTIONIST導入事例">
+          <?php
+            if (has_post_thumbnail($case_id)) :
+              echo get_the_post_thumbnail($case_id, 'large', [
+                'loading' => 'lazy'
+              ]);
+            endif;
+          ?>
         </div>
 
         <div class="p-case-study__item-body">
 
           <h3 class="p-case-study__item-title">
-            イベント受付システム「招待レセプション」を、まずは自分たちで使ってみた！<br>
-            株式会社 RECEPTIONIST
+            <?php echo get_the_title($case_id); ?>
           </h3>
 
           <div class="p-case-study__item-company">
             <div class="p-case-study__item-logo">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.webp"
-                   loading="lazy"
-                   alt="RECEPTIONIST">
+              <?php if ($logo_url): ?>
+                <img src="<?php echo esc_url($logo_url); ?>"
+                     loading="lazy"
+                     alt="">
+              <?php else: ?>
+                <!-- ★ ロゴ未登録時 fallback -->
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.webp"
+                     loading="lazy"
+                     alt="">
+              <?php endif; ?>
             </div>
           </div>
 
         </div>
       </a>
+<?php endif; ?>
 
+      <!-- ================================
+           ★ 将来追加予定：2件目
+           必要になったらコメント解除！
+      ================================= -->
+      <!--
+      <div class="p-case-study__item">
+        <div class="p-case-study__item-img img02">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_case-study02.webp" loading="lazy" alt="">
+        </div>
+        <div class="p-case-study__item-body">
+          <h3 class="p-case-study__item-title">
+            （ここに2件目のタイトル）
+          </h3>
+          <div class="p-case-study__item-company">
+            <div class="p-case-study__item-logo">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_case-study-logo02.webp" loading="lazy" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      -->
 
-      <!-- ================================ ★ 将来追加予定：2件目 必要になったらコメント解除！ ================================= <div class="p-case-study__item"> <div class="p-case-study__item-img img02"> <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_case-study02.webp" loading="lazy" alt=""> </div> <div class="p-case-study__item-body"> <h3 class="p-case-study__item-title"> （ここに2件目のタイトル） </h3> <div class="p-case-study__item-company"> <div class="p-case-study__item-logo"> <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_case-study-logo02.webp" loading="lazy" alt=""> </div> </div> </div> </div> --> <!-- ================================ ★ 将来追加予定：3件目 ================================= <div class="p-case-study__item"> <div class="p-case-study__item-img img03"> <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_case-study03.webp" loading="lazy" alt=""> </div> <div class="p-case-study__item-body"> <h3 class="p-case-study__item-title"> （ここに3件目のタイトル） </h3> <div class="p-case-study__item-company"> <div class="p-case-study__item-logo"> <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.webp" loading="lazy" alt=""> </div> </div> </div> </div> --> </div> </div> </section> <!--/end p-case-study-->
+      <!-- ================================
+           ★ 将来追加予定：3件目
+      ================================= -->
+      <!--
+      <div class="p-case-study__item">
+        <div class="p-case-study__item-img img03">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_case-study03.webp" loading="lazy" alt="">
+        </div>
+        <div class="p-case-study__item-body">
+          <h3 class="p-case-study__item-title">
+            （ここに3件目のタイトル）
+          </h3>
+          <div class="p-case-study__item-company">
+            <div class="p-case-study__item-logo">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.webp" loading="lazy" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      -->
+
+    </div>
+  </div>
+</section>
+<!--/end p-case-study-->
