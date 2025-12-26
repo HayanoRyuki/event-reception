@@ -279,3 +279,28 @@
     gap: 3.2rem;
   }
 }
+
+/* =========================================================
+   右ボックス：項目名と値の2カラムカード風
+========================================================= */
+.case-sidebar-box .sidebar-item {
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border-radius: 0.4rem;
+}
+
+.case-sidebar-box .sidebar-item-name {
+  flex: 0 0 120px; /* 項目名の固定幅で右端を揃える */
+  background: var(--color-brand-blue);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.6rem 1rem;
+}
+
+.case-sidebar-box .sidebar-item-value {
+  flex: 1;
+  background: #ffffff;
+  padding: 0.6rem 1rem;
+  color: var(--color-text-main);
+}
