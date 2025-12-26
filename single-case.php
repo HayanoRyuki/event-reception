@@ -51,10 +51,22 @@ get_header();
 
     </div>
 
-    <!-- ▼ 右：企業概要（メタボックス） -->
+    <!-- ▼ 右：企業概要（メタボックス + 企業ロゴ） -->
     <aside class="case-sidebar">
 
       <div class="case-sidebar-box">
+
+        <?php
+        // 企業ロゴ表示
+        $logo_id = get_post_meta(get_the_ID(), '_company_logo_id', true);
+        if ($logo_id) :
+            $logo_url = wp_get_attachment_url($logo_id);
+        ?>
+          <div class="company-logo-wrap">
+            <img src="<?php echo esc_url($logo_url); ?>" alt="企業ロゴ" class="company-logo">
+          </div>
+        <?php endif; ?>
+
         <h3 class="sidebar-title">企業概要</h3>
         <ul>
           <?php
