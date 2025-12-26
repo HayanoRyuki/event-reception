@@ -1,30 +1,25 @@
 /* =========================================================
-   導入事例：基本設定
+   導入事例：single-case 固有スタイル（最終版）
+   前提: COMMON CSS 適用済み
 ========================================================= */
-body.single-case {
-  font-size: 16px;
-  line-height: 1.8;
-  color: var(--color-text);
-  font-family: "Helvetica Neue", Arial, sans-serif;
-}
 
 /* =========================================================
-   中央幅を完全固定（最重要）
+   中央幅固定
 ========================================================= */
 .single-case .case-container {
   max-width: 780px !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  padding-left: 24px !important;
-  padding-right: 24px !important;
+  padding-left: 2.4rem !important;
+  padding-right: 2.4rem !important;
   box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
   .single-case .case-container {
     max-width: 100% !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 1.6rem !important;
+    padding-right: 1.6rem !important;
   }
 }
 
@@ -35,7 +30,7 @@ body.single-case {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 4px;
+  border-radius: 0.4rem;
   margin-bottom: 2rem;
 }
 
@@ -43,16 +38,17 @@ body.single-case {
    タイトル & 日付
 ========================================================= */
 .single-case .page-title {
-  font-size: 2.6rem; /* 大きめに調整 */
+  font-size: 2.6rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  border-bottom: 2px solid #0073aa; /* 青系に変更 */
+  border-bottom: 0.2rem solid var(--color-brand-blue);
   padding-bottom: 0.5rem;
+  color: var(--color-text-main);
 }
 
 .single-case .page-description {
   font-size: 1rem;
-  color: var(--color-gray-6);
+  color: var(--color-text-sub);
   margin-bottom: 2rem;
 }
 
@@ -60,21 +56,21 @@ body.single-case {
    見出し
 ========================================================= */
 .single-case .article-content h2 {
-  font-size: 2rem; /* 少し大きく */
+  font-size: 2rem;
   font-weight: 700;
   margin-top: 3rem;
   margin-bottom: 1rem;
-  border-left: 4px solid #0073aa; /* 青系に変更 */
+  border-left: 0.4rem solid var(--color-brand-blue);
   padding-left: 0.75rem;
-  color: #0073aa; /* 文字も青系 */
+  color: var(--color-brand-blue-dark);
 }
 
 .single-case .article-content h3 {
-  font-size: 1.8rem; /* 少し大きく */
+  font-size: 1.8rem;
   font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  color: #005f8d; /* 少し濃い青 */
+  color: var(--color-brand-blue-dark);
 }
 
 /* =========================================================
@@ -92,7 +88,7 @@ body.single-case {
   height: auto;
   margin: 1.8rem 0;
   display: block;
-  border-radius: 4px;
+  border-radius: 0.4rem;
 }
 
 .single-case .article-content img.size-medium {
@@ -110,26 +106,26 @@ body.single-case {
   border-collapse: collapse;
   width: 100%;
   table-layout: fixed;
-  border: 1px solid var(--color-gray-4);
+  border: 0.1rem solid var(--color-text-sub);
   margin: 2rem 0;
   font-size: 1rem;
 }
 
 .single-case th,
 .single-case td {
-  padding: 10px;
-  border: 1px solid var(--color-gray-4);
+  padding: 1rem;
+  border: 0.1rem solid var(--color-text-sub);
   vertical-align: top;
   word-break: break-word;
 }
 
 .single-case thead th {
-  background: var(--color-gray-2);
+  background: var(--bg-light);
   font-weight: 600;
 }
 
 .single-case tbody tr:nth-child(even) {
-  background: var(--color-gray-1);
+  background: var(--bg-darker);
 }
 
 /* =========================================================
@@ -147,7 +143,7 @@ body.single-case {
 }
 
 .single-case li {
-  margin-bottom: .6rem;
+  margin-bottom: 0.6rem;
 }
 
 /* =========================================================
@@ -163,24 +159,24 @@ body.single-case {
 .single-case ol li {
   position: relative;
   counter-increment: list-counter;
-  padding: 12px 16px 12px 48px;
-  border: 1px solid var(--color-gray-4);
-  background: var(--color-gray-0);
+  padding: 1.2rem 1.6rem 1.2rem 4.8rem;
+  border: 0.1rem solid var(--color-text-sub);
+  background: var(--bg-light);
   margin-bottom: 1rem;
-  border-radius: 6px;
+  border-radius: 0.6rem;
 }
 
 .single-case ol li::before {
   content: counter(list-counter);
   position: absolute;
-  left: 16px;
+  left: 1.6rem;
   top: 50%;
   transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
+  width: 2.4rem;
+  height: 2.4rem;
   border-radius: 50%;
-  background: #0073aa;
-  color: #fff;
+  background: var(--color-brand-blue);
+  color: var(--color-white);
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -199,17 +195,17 @@ body.single-case {
   display: inline-block;
   font-size: 1.4rem;
   font-weight: 600;
-  padding: 12px 24px;
-  border-radius: 4px;
-  border: 1px solid #0073aa;
-  color: #0073aa;
+  padding: 1.2rem 2.4rem;
+  border-radius: 0.4rem;
+  border: 0.2rem solid var(--color-brand-blue);
+  color: var(--color-brand-blue);
   text-decoration: none;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .single-case .back-to-archive-link:hover {
-  background: #0073aa;
-  color: #fff;
+  background: var(--color-brand-blue);
+  color: var(--color-white);
 }
 
 /* =========================================================
@@ -217,10 +213,10 @@ body.single-case {
 ========================================================= */
 .case-2col {
   display: flex;
-  gap: 40px;
+  gap: 4rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 24px;
+  padding: 4rem 2.4rem;
   box-sizing: border-box;
 }
 
@@ -235,24 +231,24 @@ body.single-case {
 }
 
 .case-sidebar-box {
-  background: var(--color-bg);
-  border: 1px solid var(--color-gray-4);
-  padding: 24px;
-  border-radius: 6px;
+  background: var(--bg-light);
+  border: 0.1rem solid var(--color-text-sub);
+  padding: 2.4rem;
+  border-radius: 0.6rem;
 }
 
 .case-sidebar-box .sidebar-title {
-  font-size: 1.6rem; /* 少し大きく */
+  font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  border-bottom: 2px solid #0073aa;
-  padding-bottom: .3rem;
+  border-bottom: 0.2rem solid var(--color-brand-blue);
+  padding-bottom: 0.3rem;
 }
 
 /* ===== 企業概要（メタボックス） ===== */
 .case-sidebar-box ul li {
-  margin-bottom: 1.2rem; /* 文字間を広げる */
-  font-size: 1.25rem; /* 少し大きく */
+  margin-bottom: 1.2rem;
+  font-size: 1.25rem;
   line-height: 1.8;
 }
 
@@ -266,11 +262,11 @@ body.single-case {
 ========================================================= */
 .company-logo-wrap {
   text-align: center;
-  margin-bottom: 24px; /* 余白を広げる */
+  margin-bottom: 2.4rem;
 }
 
 .company-logo {
-  max-width: 80%; /* 少し小さめ */
+  max-width: 60%;
   height: auto;
 }
 
@@ -280,6 +276,6 @@ body.single-case {
 @media (max-width: 768px) {
   .case-2col {
     flex-direction: column;
-    gap: 32px;
+    gap: 3.2rem;
   }
 }
