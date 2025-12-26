@@ -16,6 +16,8 @@ viewport固定（375px以下は小さくさせない）※TOPページのみ
   addEventListener("resize", switchViewport, false);
   switchViewport();
 })();
+
+
 /* ===================================================
 スクロール監視
 =====================================================*/
@@ -50,7 +52,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const target = document.querySelector(href);
         if (target) {
           e.preventDefault();
-          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+          const targetPosition =
+            target.getBoundingClientRect().top +
+            window.pageYOffset -
+            headerHeight;
+
           window.scrollTo({
             top: targetPosition,
             behavior: 'smooth'
@@ -61,74 +67,49 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+
 /* ===================================================
 FAQアコーディオン
 =====================================================*/
-// アニメーションの時間とイージング
 const animTiming = {
 	duration: 300,
 	easing: "ease-in-out",
 };
 
-// アコーディオンを閉じるときのキーフレーム
 const closingAnimation = (answer) => [
-	{
-		height: answer.offsetHeight + "px",
-		opacity: 1,
-	},
-	{
-		height: 0,
-		opacity: 0,
-	},
+	{ height: answer.offsetHeight + "px", opacity: 1 },
+	{ height: 0, opacity: 0 },
 ];
 
-// アコーディオンを開くときのキーフレーム
 const openingAnimation = (answer) => [
-	{
-		height: 0,
-		opacity: 0,
- },
- {
-		height: answer.offsetHeight + "px",
-		opacity: 1,
-	},
+	{ height: 0, opacity: 0 },
+	{ height: answer.offsetHeight + "px", opacity: 1 },
 ];
-
 
 document.addEventListener("DOMContentLoaded", () => {
 	document.querySelectorAll(".js-details").forEach(function (el) {
-			const summary = el.querySelector(".js-summary");
-			const answer = el.querySelector(".js-content");
-			summary.addEventListener("click", (event) => {
-				// デフォルトの挙動を無効化
-				event.preventDefault();
-				// detailsのopen属性を判定
-				if (el.getAttribute("open") !== null) {
-					// アコーディオンを閉じるときの処理
-					const closingAnim = answer.animate(closingAnimation(answer), animTiming);
-					closingAnim.onfinish = () => {
-						// アニメーションの完了後にopen属性を取り除く
-						el.removeAttribute("open");
-					};
-				} else {
-					// open属性を付与
-					el.setAttribute("open", "true");
-					// アコーディオンを開くときの処理
-					const openingAnim = answer.animate(openingAnimation(answer), animTiming);
-				}
-			});
+		const summary = el.querySelector(".js-summary");
+		const answer = el.querySelector(".js-content");
+
+		summary.addEventListener("click", (event) => {
+			event.preventDefault();
+
+			if (el.getAttribute("open") !== null) {
+				const closingAnim = answer.animate(closingAnimation(answer), animTiming);
+				closingAnim.onfinish = () => el.removeAttribute("open");
+			} else {
+				el.setAttribute("open", "true");
+				answer.animate(openingAnimation(answer), animTiming);
+			}
 		});
 	});
+});
+
 
 /* ===================================================
 ヘッダー高さを正確に取得して本文に余白を追加（全ページ共通）
 =====================================================*/
 document.addEventListener("DOMContentLoaded", function () {
-  const body = document.body;
-
-  // LPや特定ページを除外したい場合は CSS で調整する
-  // 今は例外なし
-
   const main = document.querySelector(".l-main");
   if (!main) return;
 
@@ -139,11 +120,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const targetHeader = headerAds || header;
     if (!targetHeader) return;
 
-    const style = window.getComputedStyle(targetHeader);
-    const headerHeight =
-      targetHeader.offsetHeight +
-      parseFloat(style.marginTop) +
-      parseFloat(style.marginBottom);
+    // ★ 修正：margin を含めず offsetHeight のみを採用
+    const headerHeight = targetHeader.offsetHeight;
 
     main.style.paddingTop = `${headerHeight}px`;
   };
@@ -151,10 +129,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // 初期設定
   setMainPadding();
 
-  // ウィンドウリサイズ対応
+  // リサイズ対応
   window.addEventListener("resize", setMainPadding);
 
-  // ヘッダー高さ変更を監視
+  // ヘッダーのDOM変化も監視
   const observer = new MutationObserver(setMainPadding);
   if (header) observer.observe(header, { attributes: true, childList: true, subtree: true });
   if (headerAds) observer.observe(headerAds, { attributes: true, childList: true, subtree: true });
