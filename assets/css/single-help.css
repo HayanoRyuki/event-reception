@@ -58,6 +58,7 @@ body.single-help {
 ========================================================= */
 .single-help main.l-main {
   padding-bottom: 6rem !important;
+  /* padding-top は JS 側で自動計算 */
 }
 
 /* =========================================================

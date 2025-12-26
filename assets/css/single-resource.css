@@ -247,7 +247,7 @@
   padding-top: 2rem;
 }
 
-/* mainのpadding-top競合を防止 */
+/* mainのpadding-top競合を防止（JS 自動計算対応） */
 .l-main.single-resource {
   padding-top: var(--header-height, auto) !important;
 }
@@ -285,11 +285,4 @@ body.single-resource .post-title {
   .resource-meta {
     font-size: 1.3rem;
   }
-}
-
-/* ========================================
-   優先度上書き：タイトルのマージン補正
-======================================== */
-body.single-resource .post-title {
-  margin: 2rem 0 0.5rem 22rem !important;
 }

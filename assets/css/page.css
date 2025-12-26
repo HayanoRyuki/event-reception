@@ -10,7 +10,6 @@ body {
   line-height: 1.7;
 }
 
-
 /* ========================================
    固定ページ共通スタイル（page.css）
    対象：通常固定ページ / 問い合わせ etc
@@ -45,7 +44,6 @@ body {
   margin-bottom: 1.6rem;
   font-size: 1.6rem;
 }
-
 
 /* ----------------------------------------
    お問い合わせフォーム系 共通
@@ -96,7 +94,6 @@ body {
   background: var(--color-primary-hover);
 }
 
-
 /* ----------------------------------------
    共通ヘッダー・フッター余白
 ---------------------------------------- */
@@ -107,7 +104,6 @@ body {
 .page .lp-footer {
   margin-top: 4rem;
 }
-
 
 /* ========================================
    問い合わせフォーム詳細設計
@@ -179,4 +175,12 @@ body {
 
 .page-contact .c-button:hover {
   background: var(--color-primary-hover);
+}
+
+/* ------------------------------
+   mainのpadding-top競合を防止（JS 自動計算対応）
+------------------------------ */
+.l-main.page,
+.l-main.page-contact {
+  padding-top: var(--header-height, auto) !important;
 }
