@@ -58,3 +58,23 @@ add_action('wp_head', function () {
           href="<?php echo get_template_directory_uri(); ?>/assets/img/icon_3c.png?v=20251217">
     <?php
 }, 999);
+
+// ============================================
+// 外部確認URLの閲覧制御
+// ============================================
+add_action('template_redirect', function () {
+    if (!is_singular('case')) return;
+
+    global $post;
+    if ($post->post_status === 'publish') return;
+
+    $token   = $_GET['external_preview'] ?? '';
+    $saved   = get_post_meta($post->ID, '_external_preview_token', true);
+    $expires = intval(get_post_meta($post->ID, '_external_preview_expires', true));
+
+    if ($token && $saved && hash_equals($saved, $token) && time() < $expires) {
+        return; // 表示許可
+    }
+
+    wp_die('このページは確認期限が切れています。', '閲覧不可', ['response' => 403]);
+});
