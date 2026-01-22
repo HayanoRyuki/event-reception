@@ -273,3 +273,33 @@ body.single-case {
     gap: 32px;
   }
 }
+
+
+/* =========================================================
+   画像2枚横並びコンポーネント
+========================================================= */
+.rcp-case-image-two {
+  display: flex;
+  gap: 16px;
+  margin: 2rem 0;
+}
+
+.rcp-case-image-two figure {
+  flex: 1;
+  margin: 0;
+}
+
+.rcp-case-image-two figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 0;
+}
+
+/* モバイル：縦並び */
+@media (max-width: 768px) {
+  .rcp-case-image-two {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
