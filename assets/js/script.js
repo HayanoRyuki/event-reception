@@ -121,14 +121,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 /* ===================================================
-ヘッダー高さを正確に取得して本文に余白を追加（統合版）
+ヘッダー高さを正確に取得して本文に余白を追加（全ページ対応）
 =====================================================*/
 document.addEventListener("DOMContentLoaded", function () {
-  const path = window.location.pathname;
-
-  // TOPページは除外
-  if (path === "/" || path === "/index.php") return;
-
   const body = document.body;
 
   // LP・ヘルプページは除外（CSSで既にpadding-top設定済み）
@@ -142,28 +137,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const main = document.querySelector(".l-main");
   const header = document.querySelector(".l-header");
-  const headerAds = document.querySelector(".l-header-ads");
 
-  if (!main) return;
+  if (!main || !header) return;
 
   const setMainPadding = () => {
-    let targetHeader = headerAds ? headerAds : header;
-
-    if (!targetHeader) return;
-
-    const style = window.getComputedStyle(targetHeader);
-    const headerHeight =
-      targetHeader.offsetHeight +
-      parseFloat(style.marginTop) +
-      parseFloat(style.marginBottom);
-
+    const headerHeight = header.offsetHeight;
     main.style.paddingTop = `${headerHeight}px`;
   };
 
   setMainPadding();
   window.addEventListener("resize", setMainPadding);
-  
+
   const observer = new MutationObserver(setMainPadding);
-  if (header) observer.observe(header, { attributes: true, childList: true, subtree: true });
-  if (headerAds) observer.observe(headerAds, { attributes: true, childList: true, subtree: true });
+  observer.observe(header, { attributes: true, childList: true, subtree: true });
 });

@@ -174,13 +174,8 @@ svg {
 .l-main {
   overflow: hidden;
   width: 100%;
-  padding-top: 7.4rem; /* ヘッダー高さ分（74px = padding 16px×2 + logo 42px） */
+  padding-top: 0; /* JSで動的に設定 */
   margin-top: 0;
-}
-@media screen and (max-width: 767px) {
-  .l-main {
-    padding-top: 6rem; /* SP: 60px */
-  }
 }
 
 /* 共通inner
