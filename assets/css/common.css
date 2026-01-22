@@ -98,19 +98,19 @@ img {
 
 /* ---- 基本 ---- */
 html {
-  font-size: 62.5%;
-  scroll-padding-top: 9.4rem;
+  font-size: 100%;  /* 通常ページ：1rem = 16px */
+  scroll-padding-top: 150px;
 }
 
 @media screen and (max-width: 767px) {
   html {
-    scroll-padding-top: 8rem;
+    scroll-padding-top: 128px;
   }
 }
 
 body {
   font-family: "Noto Sans JP", "Roboto", "DM Sans", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1rem;  /* 16px */
   color: var(--color-text-main);
   background: #ffffff;
   line-height: 1.6;
@@ -165,12 +165,12 @@ svg {
 .l-main {
   overflow: hidden;
   width: 100%;
-  margin-top: 9.4rem;
+  margin-top: 94px;
 }
 
 @media screen and (max-width: 767px) {
   .l-main {
-    margin-top: 8rem;
+    margin-top: 80px;
   }
 }
 

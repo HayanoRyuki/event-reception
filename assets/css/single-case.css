@@ -159,9 +159,9 @@ body.single-case {
 /* ===== サイドバー・企業情報 ===== */
 .case-sidebar-box {
   position: sticky;
-  top: 6rem;
+  top: 110px;
   background: var(--color-white);
-  padding: 1.5rem;
+  padding: 24px;
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }

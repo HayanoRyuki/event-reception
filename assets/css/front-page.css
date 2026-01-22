@@ -43,6 +43,7 @@ figure {
 }
 
 html {
+  font-size: 62.5%;  /* TOPページ専用：1rem = 10px（LP用小さいサイズ） */
   line-height: 1;
 }
 
