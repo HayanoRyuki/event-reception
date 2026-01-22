@@ -131,10 +131,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const body = document.body;
 
-  // LP除外
+  // LP・ヘルプページは除外（CSSで既にpadding-top設定済み）
   if (
     body.classList.contains("single-resource") ||
     body.classList.contains("single-case") ||
+    body.classList.contains("single-help") ||
+    body.classList.contains("post-type-archive-help") ||
     body.classList.contains("page-template-page-contact")
   ) return;
 
