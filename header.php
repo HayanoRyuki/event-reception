@@ -51,10 +51,6 @@
   <link rel="icon" sizes="192x192"
         href="<?php echo get_template_directory_uri(); ?>/assets/img/icon_3c.png">
 
-  <!-- front-page main CSS -->
-  <link rel="stylesheet"
-        href="<?php echo get_template_directory_uri(); ?>/assets/css/front-page.css">
-
   <?php wp_head(); ?>
 </head>
 
