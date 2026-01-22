@@ -9,15 +9,15 @@
 ========================================================= */
 .footer {
   background: var(--color-brand-blue);
-  color: var(--color-white);
-  padding: 6rem 0 3rem;
-  margin-top: 6rem;
+  color: #fff;
+  padding: 60px 0 30px;
+  margin-top: 60px;
 }
 
 @media screen and (max-width: 767px) {
   .footer {
-    padding: 4rem 0 2rem;
-    margin-top: 4rem;
+    padding: 40px 0 20px;
+    margin-top: 40px;
   }
 }
 
@@ -28,7 +28,7 @@
 .footer__inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 20px;
 }
 
 
@@ -37,7 +37,7 @@
 ========================================================= */
 .footer__logo {
   width: 200px;
-  margin-bottom: 2.4rem;
+  margin-bottom: 24px;
 }
 
 @media screen and (max-width: 767px) {
@@ -53,13 +53,13 @@
 .footer__menu {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem 3rem;
-  margin: 2rem 0 3.2rem;
+  gap: 20px 30px;
+  margin: 20px 0 32px;
 }
 
 .footer__menu a {
-  color: var(--color-white);
-  font-size: 1.4rem;
+  color: #fff;
+  font-size: 14px;
   transition: opacity .3s;
 }
 
@@ -72,7 +72,7 @@
 @media screen and (max-width: 767px) {
   .footer__menu {
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 12px;
   }
 }
 
@@ -81,10 +81,10 @@
    Company Block
 ========================================================= */
 .footer__company {
-  font-size: 1.3rem;
+  font-size: 13px;
   line-height: 1.8;
   opacity: .9;
-  margin-bottom: 2.4rem;
+  margin-bottom: 24px;
 }
 
 
@@ -93,7 +93,7 @@
 ========================================================= */
 .footer__copyright {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 12px;
   opacity: 0.9;
-  margin-top: 2rem;
+  margin-top: 20px;
 }
