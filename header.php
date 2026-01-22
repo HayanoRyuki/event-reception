@@ -52,13 +52,6 @@
         href="<?php echo get_template_directory_uri(); ?>/assets/img/icon_3c.png">
 
   <?php wp_head(); ?>
-
-  <?php
-  // TOPページ（Landing Frontテンプレート）の場合、front-page.cssを読み込む
-  if ( is_page_template('front-page.php') || is_front_page() || is_home() ) :
-  ?>
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/front-page.css?v=<?php echo filemtime(get_template_directory() . '/assets/css/front-page.css'); ?>">
-  <?php endif; ?>
 </head>
 
 <body <?php body_class(); ?>>
