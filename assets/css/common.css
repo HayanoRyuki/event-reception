@@ -25,6 +25,19 @@
 
   --bg-light: #f7f7f7;
   --bg-darker: #e7eef3;
+
+  /* single-resource / form用 */
+  --color-text: #333333;
+  --color-bg: #ffffff;
+  --color-accent: #EA526F;
+  --color-accent-light: #f06a83;
+  --color-gray-0: #fafafa;
+  --color-gray-1: #f5f5f5;
+  --color-gray-4: #cccccc;
+  --color-gray-7: #666666;
+
+  /* ヘッダー高さ */
+  --header-height: 94px;
 }
 
 
