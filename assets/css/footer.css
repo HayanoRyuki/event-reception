@@ -1,31 +1,26 @@
 /***************************************************************
- *  FOOTER  （装飾専用CSS）
- *  ※ Reset / Layout / Utility は common.css に集約済み
+ *  FOOTER（LP用リッチフッター）
+ *  全ページ共通で使用 - pxベース
  ***************************************************************/
 
 
 /* =========================================================
    Footer Base
 ========================================================= */
-.footer {
-  background: var(--color-brand-blue);
-  color: #fff;
-  padding: 60px 0 30px;
-  margin-top: 60px;
+.l-footer {
+  background: #E3F5FA;
+  padding: 64px 0 40px;
+  position: relative;
 }
 
 @media screen and (max-width: 767px) {
-  .footer {
+  .l-footer {
     padding: 40px 0 20px;
-    margin-top: 40px;
   }
 }
 
-
-/* =========================================================
-   Footer Inner Layout
-========================================================= */
-.footer__inner {
+.l-footer__inner {
+  position: static;
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
@@ -33,67 +28,248 @@
 
 
 /* =========================================================
-   Logo
+   Container Layout
 ========================================================= */
-.footer__logo {
-  width: 200px;
-  margin-bottom: 24px;
-}
-
-@media screen and (max-width: 767px) {
-  .footer__logo {
-    width: 160px;
-  }
-}
-
-
-/* =========================================================
-   Menu
-========================================================= */
-.footer__menu {
+.l-footer__container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px 30px;
-  margin: 20px 0 32px;
-}
-
-.footer__menu a {
-  color: #fff;
-  font-size: 14px;
-  transition: opacity .3s;
-}
-
-@media (any-hover: hover) {
-  .footer__menu a:hover {
-    opacity: .7;
-  }
+  align-items: center;
 }
 
 @media screen and (max-width: 767px) {
-  .footer__menu {
+  .l-footer__container {
     flex-direction: column;
-    gap: 12px;
+    align-items: flex-start;
+  }
+}
+
+.l-footer__contents {
+  max-width: 53.6%;
+}
+
+@media screen and (max-width: 767px) {
+  .l-footer__contents {
+    max-width: 100%;
+    display: contents;
   }
 }
 
 
 /* =========================================================
-   Company Block
+   Body Section
 ========================================================= */
-.footer__company {
-  font-size: 13px;
-  line-height: 1.8;
-  opacity: .9;
-  margin-bottom: 24px;
+.l-footer__body {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+@media screen and (max-width: 767px) {
+  .l-footer__body {
+    gap: 32px;
+    order: 1;
+  }
+}
+
+.l-footer__title {
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: #191817;
+}
+
+@media screen and (max-width: 767px) {
+  .l-footer__title {
+    font-size: 29px;
+    text-align: center;
+  }
+}
+
+.l-footer__text {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
+  color: #59514E;
+}
+
+@media screen and (max-width: 767px) {
+  .l-footer__text {
+    font-size: 14px;
+    line-height: 1.56;
+  }
 }
 
 
 /* =========================================================
-   Copyright
+   Links / CTA
 ========================================================= */
-.footer__copyright {
-  text-align: center;
+.l-footer__links {
+  display: flex;
+  gap: 24px;
+}
+
+@media screen and (max-width: 767px) {
+  .l-footer__links {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+}
+
+/* CTAボタン */
+.l-footer__links .c-button__large {
+  height: 48px;
+  border-radius: 100vmax;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: flex-end;
+  width: 275px;
+  padding: 0 16px;
+  background: var(--color-primary);
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.l-footer__links .c-button__large::after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background: url(../img/icon_button-arrow--white.webp) no-repeat center / contain;
+}
+
+.l-footer__links .c-button__large:hover {
+  opacity: 0.8;
+}
+
+
+/* =========================================================
+   Company Section
+========================================================= */
+.l-footer__company {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+@media screen and (max-width: 767px) {
+  .l-footer__company {
+    gap: 40px;
+    order: 3;
+    margin-top: 30px;
+  }
+}
+
+.l-footer__company-menu {
+  display: flex;
+  gap: 27px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .l-footer__company-menu {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+}
+
+.l-footer__company-menu li a {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: #413C3A;
+  padding: 12px 4px;
+  transition: opacity 0.3s;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+  .l-footer__company-menu li a {
+    padding: 8px 4px;
+  }
+}
+
+.l-footer__company-menu li a:hover {
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   Company Info
+========================================================= */
+.l-footer__company-info {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .l-footer__company-info {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+}
+
+.l-footer__company-logo {
+  width: 132px;
+  flex-shrink: 0;
+}
+
+.l-footer__company-logo img {
+  width: 100%;
+  height: auto;
+}
+
+.l-footer__company-copyright {
   font-size: 12px;
-  opacity: 0.9;
-  margin-top: 20px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: #908883;
+}
+
+.l-footer__company-copyright span {
+  margin-left: 16px;
+}
+
+
+/* =========================================================
+   Footer Image
+========================================================= */
+.l-footer__img {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: min(44.375vw, 699px);
+  height: min(30.703125vw, 483px);
+}
+
+.l-footer__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 767px) {
+  .l-footer__img {
+    position: relative;
+    transform: none;
+    width: 343px;
+    height: 248px;
+    margin-left: auto;
+    margin-right: calc(50% - 50vw);
+    order: 2;
+    margin-top: 40px;
+  }
 }
