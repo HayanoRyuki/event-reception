@@ -98,7 +98,6 @@ img {
 
 /* ---- 基本 ---- */
 html {
-  font-size: 100%;  /* 通常ページ：1rem = 16px */
   scroll-padding-top: 150px;
 }
 
@@ -108,9 +107,13 @@ html {
   }
 }
 
+/* TOPページ以外：通常サイズ（1rem = 16px） */
+body:not(.home):not(.page-template-front-page) {
+  font-size: 16px;
+}
+
 body {
   font-family: "Noto Sans JP", "Roboto", "DM Sans", sans-serif;
-  font-size: 1rem;  /* 16px */
   color: var(--color-text-main);
   background: #ffffff;
   line-height: 1.6;
