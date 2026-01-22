@@ -287,12 +287,16 @@ body.single-case {
 .rcp-case-image-two figure {
   flex: 1;
   margin: 0;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
 .rcp-case-image-two figure img {
   width: 100%;
-  height: auto;
-  border-radius: 4px;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   margin: 0;
 }
 
@@ -301,5 +305,9 @@ body.single-case {
   .rcp-case-image-two {
     flex-direction: column;
     gap: 12px;
+  }
+
+  .rcp-case-image-two figure {
+    height: 300px;
   }
 }
