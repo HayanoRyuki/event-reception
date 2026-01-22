@@ -1,14 +1,31 @@
 /* ======================================================
-   single-resource.css  固定ページ（資料請求・お問い合わせ共通）
+   single-resource.css  資料ダウンロードページ
 ====================================================== */
 
 /* ------------------------------
    ベース設定
 ------------------------------ */
-.page-default,
 .single-resource {
-  background-color: var(--color-gray-0);
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #fafafa;
+  font-family: "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ------------------------------
+   タイトル
+------------------------------ */
+.single-resource .post-header {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 0;
+}
+
+.single-resource .post-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 24px 0;
+  line-height: 1.4;
+  text-align: center;
 }
 
 /* ------------------------------
@@ -18,170 +35,201 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 4rem;
+  gap: 48px;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 24px 24px 64px;
 }
 
 @media (max-width: 768px) {
   .resource-body {
     flex-direction: column;
-    padding: 2rem 1rem;
+    padding: 16px 16px 48px;
+    gap: 32px;
   }
 }
 
 /* 左：本文・画像 */
 .main-column {
   flex: 1.2;
+  min-width: 0;
 }
 
 .post-thumbnail {
-  margin-bottom: 2rem;
+  margin-bottom: 24px;
 }
 
 .post-thumbnail img {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 
 /* 右：フォームカード */
 .form-area {
   flex: 1;
-  background: var(--color-bg);
-  padding: 2.5rem 2rem;
+  background: #fff;
+  padding: 32px 24px;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 110px;
 }
 
 @media (max-width: 768px) {
   .form-area {
     width: 100%;
-    margin-top: 3rem;
+    position: static;
   }
 }
 
 /* ------------------------------
-   タイトル・メタ情報
+   ページ数・更新日（インライン）
 ------------------------------ */
-.post-title {
-  font-size: 2.6rem;
-  font-weight: 700;
-  color: var(--color-text);
-  margin: 0 0 1.5rem 0;
-  line-height: 1.4;
-}
-
-/* ページ数・更新日（1行のインラインメタ） */
 .resource-meta-inline {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  font-size: 1.4rem;
-  color: var(--color-gray-7);
-  margin-bottom: 1.5rem;
+  gap: 8px 24px;
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .resource-meta-inline .label-badge {
-  background: var(--color-gray-1);
-  color: var(--color-text);
+  background: #f0f0f0;
+  color: #333;
   font-weight: 600;
-  padding: 0.3em 0.8em;
+  padding: 6px 12px;
   border-radius: 4px;
-  font-size: 1.3rem;
+  font-size: 13px;
 }
 
 .resource-meta-inline .label-value {
-  margin-left: 0.3em;
   font-weight: 500;
+  font-size: 15px;
+  color: #333;
 }
 
-/* 詳細メタ情報（対象者・内容・ポイント） */
+/* ------------------------------
+   詳細メタ情報（対象者・内容・ポイント）
+------------------------------ */
 .resource-meta {
-  font-size: 1.4rem;
-  color: var(--color-text);
-  margin-bottom: 2.5rem;
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 32px;
 }
 
 .resource-meta .meta-row {
   display: flex;
-  flex-wrap: wrap;
   align-items: flex-start;
-  margin-bottom: 0.8rem;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.resource-meta .meta-row:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .resource-meta .label-badge {
   flex-shrink: 0;
-  background: var(--color-gray-1);
-  color: var(--color-text);
+  width: 140px;
+  background: #e8f4f8;
+  color: #0098BB;
   font-weight: 600;
-  padding: 0.3em 0.8em;
-  border-radius: 4px;
-  font-size: 1.3rem;
-  margin-right: 0.6em;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  text-align: center;
+  margin-right: 16px;
 }
 
 .resource-meta .label-value {
   flex: 1;
-  line-height: 1.6;
+  line-height: 1.7;
+  padding-top: 6px;
+}
+
+@media (max-width: 768px) {
+  .resource-meta .meta-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .resource-meta .label-badge {
+    width: auto;
+    align-self: flex-start;
+  }
+
+  .resource-meta .label-value {
+    padding-top: 0;
+  }
 }
 
 /* ------------------------------
    本文
 ------------------------------ */
 .post-content {
-  font-size: 1.5rem;
+  font-size: 16px;
   line-height: 1.8;
-  color: var(--color-text);
+  color: #333;
+}
+
+.post-content p {
+  margin-bottom: 1.5em;
 }
 
 /* ------------------------------
    フォーム構造
 ------------------------------ */
-.request-form label {
+.form-area label {
   font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--color-text);
+  font-size: 14px;
+  color: #333;
   display: block;
-  margin-bottom: 0.4rem;
+  margin-bottom: 6px;
 }
 
-.request-form input[type="text"],
-.request-form input[type="email"],
-.request-form input[type="tel"],
-.request-form select,
-.request-form textarea {
+.form-area input[type="text"],
+.form-area input[type="email"],
+.form-area input[type="tel"],
+.form-area select,
+.form-area textarea {
   width: 100%;
-  padding: 0.7rem 1rem;
-  border: 1px solid var(--color-gray-4);
+  padding: 12px 14px;
+  border: 1px solid #ccc;
   border-radius: 6px;
-  background: var(--color-bg);
-  font-size: 0.95rem;
+  background: #fff;
+  font-size: 15px;
   box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.request-form input:focus,
-.request-form select:focus,
-.request-form textarea:focus {
+.form-area input:focus,
+.form-area select:focus,
+.form-area textarea:focus {
   outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 2px rgba(59,130,246,0.15);
+  border-color: #0098BB;
+  box-shadow: 0 0 0 3px rgba(0,152,187,0.15);
 }
 
 /* 行間 */
 .form-row {
-  margin-bottom: 1.4rem;
+  margin-bottom: 20px;
 }
 
 .name-row {
   display: flex;
-  gap: 1rem;
+  gap: 12px;
 }
 
-.name-row div {
+.name-row > div {
   flex: 1;
 }
 
@@ -195,22 +243,24 @@
 
 .radio-list li,
 .checkbox-list li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
+  font-size: 14px;
 }
 
 .radio-list input,
 .checkbox-list input {
-  margin-right: 0.5rem;
+  margin-right: 8px;
 }
 
 /* 同意チェック */
 .check-row label {
-  font-size: 0.9rem;
-  color: var(--color-gray-7);
+  font-size: 13px;
+  color: #666;
+  font-weight: 400;
 }
 
 .check-row a {
-  color: var(--color-primary);
+  color: #0098BB;
   text-decoration: underline;
 }
 
@@ -219,79 +269,88 @@
 }
 
 /* 送信ボタン */
-.c-button {
-  display: inline-block;
+.form-area .c-button,
+.form-area button[type="submit"] {
+  display: block;
   width: 100%;
-  background-color: var(--color-accent);
+  background-color: #EA526F;
   color: #fff;
   font-weight: 700;
   text-align: center;
   border: none;
   border-radius: 8px;
-  padding: 0.9rem 1rem;
+  padding: 14px 16px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 16px;
   transition: background-color 0.25s ease;
+  margin-top: 24px;
 }
 
-.c-button:hover {
-  background-color: var(--color-accent-light);
+.form-area .c-button:hover,
+.form-area button[type="submit"]:hover {
+  background-color: #d1445e;
 }
 
 /* ------------------------------
-   余白・フォント調整
+   HubSpotフォーム埋め込み対応
 ------------------------------ */
-
-/* H1の上に余白確保 */
-.single-resource .container {
-  padding-top: 2rem;
+.form-embed iframe {
+  width: 100% !important;
+  min-height: 500px;
 }
 
-/* mainのpadding-top競合を防止 */
-.l-main.single-resource {
-  padding-top: var(--header-height, auto) !important;
+.form-embed .hs-form {
+  font-family: inherit;
 }
 
-/* LPテンプレート全体フォント調整 */
-body.single-resource,
-body.page-template-page-contact {
-  font-size: 1.05rem;
-  line-height: 1.8;
+.form-embed .hs-form-field {
+  margin-bottom: 16px;
 }
 
-body.single-resource .form-area,
-body.page-template-page-contact .form-area {
-  font-size: 1rem;
+.form-embed .hs-input {
+  width: 100% !important;
+  padding: 12px 14px !important;
+  border: 1px solid #ccc !important;
+  border-radius: 6px !important;
+  font-size: 15px !important;
 }
 
-body.single-resource .post-title {
-  font-size: 2.6rem;
-  font-weight: 700;
-  line-height: 1.4;
+.form-embed .hs-button {
+  background-color: #EA526F !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 14px 24px !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  width: 100% !important;
 }
 
-/* スマホ対応 */
+.form-embed .hs-button:hover {
+  background-color: #d1445e !important;
+}
+
+/* ------------------------------
+   スマホ対応
+------------------------------ */
 @media (max-width: 768px) {
-  .post-title {
-    font-size: 2rem;
-    margin-top: 1rem;
+  .single-resource .post-header {
+    padding: 24px 16px 0;
+  }
+
+  .single-resource .post-title {
+    font-size: 22px;
   }
 
   .resource-meta-inline {
-    font-size: 1.3rem;
-    gap: 1rem;
+    font-size: 14px;
   }
 
   .resource-meta {
-    font-size: 1.3rem;
+    font-size: 14px;
   }
-}
 
-/* ========================================
-   優先度上書き：タイトルのマージン補正
-======================================== */
-body.single-resource .post-title {
-  margin: 2rem auto 1.5rem;
-  max-width: 1100px;
-  padding: 0 2rem;
+  .post-content {
+    font-size: 15px;
+  }
 }
