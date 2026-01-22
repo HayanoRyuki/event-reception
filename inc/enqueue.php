@@ -60,8 +60,10 @@ function eventlp_enqueue_scripts() {
   // ページ別CSS
   // ======================
 
-  // Front Page
-  if ( is_front_page() || is_page_template('front-page.php') ) {
+  // Front Page（TOPページ - 常に読み込む）
+  // is_front_page() か is_home() か front-page.php テンプレートの場合
+  $is_top = is_front_page() || is_home() || is_page_template('front-page.php') || is_page_template('Landing Front');
+  if ( $is_top ) {
     $path = "{$theme_dir}/assets/css/front-page.css";
     if (file_exists($path)) {
       wp_enqueue_style(
