@@ -134,6 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // LP除外
   if (
     body.classList.contains("single-resource") ||
+    body.classList.contains("single-case") ||
     body.classList.contains("page-template-page-contact")
   ) return;
 
