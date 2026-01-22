@@ -95,17 +95,7 @@ get_header('ads');
 
         <!-- 右：フォーム -->
         <aside class="form-area">
-          <?php
-          // ▼ 優先：カスタムフィールドで埋め込まれたフォーム
-          $form = get_post_meta(get_the_ID(), 'form_embed', true);
-
-          if (!empty($form)) :
-            echo '<div class="form-embed">' . $form . '</div>';
-          else :
-            // ▼ 共通パーツを自動挿入
-            get_template_part('form-parts/request-form');
-          endif;
-          ?>
+          <?php get_template_part('form-parts/request-form'); ?>
         </aside>
 
       </div><!-- /.resource-body -->
