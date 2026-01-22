@@ -55,26 +55,38 @@ get_header();
     <aside class="case-sidebar">
 
       <div class="case-sidebar-box">
+        <?php
+        // ロゴ画像
+        $logo_id = get_post_meta(get_the_ID(), '_case_logo_image_id', true);
+        if ($logo_id) :
+          $logo_url = wp_get_attachment_image_url($logo_id, 'medium');
+        ?>
+          <div class="case-logo">
+            <img src="<?php echo esc_url($logo_url); ?>" alt="企業ロゴ">
+          </div>
+        <?php endif; ?>
+
         <h3 class="sidebar-title">企業概要</h3>
-        <ul>
+        <dl class="case-info-list">
           <?php
           $fields = [
-            'company_name' => '企業名',
-            'industry'     => '業種',
-            'size'         => '従業員数',
-            'location'     => '所在地',
-            'plan'         => '導入プラン'
+            '_case_company_name' => '企業名',
+            '_case_industry'     => '業種',
+            '_case_employee_size' => '従業員数',
           ];
           foreach ($fields as $key => $label) :
             $val = get_post_meta(get_the_ID(), $key, true);
             if ($val) :
           ?>
-            <li><strong><?php echo esc_html($label); ?>：</strong><?php echo esc_html($val); ?></li>
+            <div class="case-info-item">
+              <dt><?php echo esc_html($label); ?></dt>
+              <dd><?php echo esc_html($val); ?></dd>
+            </div>
           <?php
             endif;
           endforeach;
           ?>
-        </ul>
+        </dl>
       </div>
 
     </aside>
