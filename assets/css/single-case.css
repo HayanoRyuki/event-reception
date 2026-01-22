@@ -1,107 +1,360 @@
 /* =========================================================
-   導入事例：基本設定
+   CASE SINGLE PAGE
 ========================================================= */
+
+/* ===== レイアウト ===== */
+.site-main.case,
 body.single-case {
-  font-size: 16px;
-  line-height: 1.8;
-  color: var(--color-text);
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  padding-top: 1rem;
+  background-color: var(--color-bg-alt);
 }
 
-/* =========================================================
-   中央幅を完全固定（最重要）
-========================================================= */
-.single-case .case-container {
-  max-width: 780px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 24px !important;
-  padding-right: 24px !important;
+.case-2col {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  padding: 0 20px 80px;
   box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
-  .single-case .case-container {
-    max-width: 100% !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
+.case-main {
+  flex: 1 1 66.6666%;
+  min-width: 0;
 }
 
-/* =========================================================
-   アイキャッチ
-========================================================= */
+.case-sidebar {
+  flex: 0 0 33.3333%;
+}
+
+/* ===== パンくず ===== */
+.breadcrumb {
+  background-color: var(--color-white);
+  font-size: 14px;
+  padding: 12px 0;
+  margin-bottom: 30px;
+}
+
+.breadcrumb-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.breadcrumb-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb-item::after {
+  content: ">";
+  margin: 0 0.5em;
+  color: var(--color-text-light);
+}
+
+.breadcrumb-item:last-child::after {
+  content: "";
+}
+
+.breadcrumb-item a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+
+/* ===== 記事タイトル ===== */
+.case-title,
+.single-case .page-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem;
+  color: var(--color-text);
+  border: none;
+  padding: 0;
+}
+
+/* ===== 日付 ===== */
+.single-case .page-description {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-bottom: 1.5rem;
+}
+
+/* ===== 記事ボックス ===== */
+.case-article {
+  background: var(--color-white);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.case-eyecatch,
+.case-thumb {
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
 .case-thumb img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 4px;
-  margin-bottom: 2rem;
+  border-radius: 8px;
 }
 
-/* =========================================================
-   タイトル & 日付
-========================================================= */
-.single-case .page-title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid var(--color-gray-4);
-  padding-bottom: .5rem;
-}
-
-.single-case .page-description {
+.case-content,
+.article-content {
   font-size: 1rem;
-  color: var(--color-gray-6);
-  margin-bottom: 2rem;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+/* ===== 要約 ===== */
+.case-summary {
+  background: var(--color-bg);
+  padding: 1.5rem;
+  margin: 2.5rem 0;
+  border-radius: 6px;
+}
+
+.case-summary-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.case-summary-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1em 0;
+  font-size: 13px;
+  color: var(--color-text);
+}
+
+.case-summary-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.5;
+}
+
+.case-check-icon {
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 1em;
+  margin-top: 0.15em;
+  flex-shrink: 0;
+}
+
+/* ===== サイドバー・企業情報 ===== */
+.case-sidebar-box {
+  position: sticky;
+  top: 6rem;
+  background: var(--color-white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.case-logo {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.case-logo img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+}
+
+.sidebar-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== 企業概要テーブル ===== */
+.case-info-list {
+  margin: 0;
+}
+
+.case-info-item {
+  display: flex;
+  padding: 10px 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  border-bottom: 1px solid var(--color-gray-2);
+}
+
+.case-info-item:last-child {
+  border-bottom: none;
+}
+
+.case-info-item dt {
+  flex-shrink: 0;
+  width: 90px;
+  color: var(--color-text-light);
+  font-weight: 700;
+}
+
+.case-info-item dd {
+  margin: 0;
+  flex: 1;
+  color: var(--color-text);
 }
 
 /* =========================================================
-   見出し
+   CASE CONTENT（本文要素）
 ========================================================= */
-.single-case .article-content h2 {
-  font-size: 1.95rem;
-  font-weight: 600;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
+
+/* ===== リード文 ===== */
+.interview-lead {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  font-weight: 500;
+  color: var(--color-text);
+  background: var(--color-bg-alt);
+  padding: 1.5rem 2rem;
   border-left: 4px solid var(--color-primary);
+  border-radius: 6px;
+  margin-bottom: 3rem;
+}
+
+/* ===== 見出し ===== */
+.single-case .article-content h2,
+h2.case {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  border-left: 6px solid var(--color-primary);
   padding-left: 0.75rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
 }
 
 .single-case .article-content h3 {
-  font-size: 1.7rem;
-  font-weight: 600;
-  margin-top: 2rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--color-primary);
+  line-height: 1.5;
 }
 
-/* =========================================================
-   段落
-========================================================= */
+/* ===== 本文・段落 ===== */
+.case-answer,
 .single-case .article-content p {
-  margin-bottom: 1.6rem;
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--color-text);
+  margin-bottom: 2rem;
 }
 
-/* =========================================================
-   画像：記事内
-========================================================= */
+/* ===== 強調マーカー ===== */
+.case-marker {
+  background: linear-gradient(transparent 60%, rgba(255, 235, 59, 0.7) 60%);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 1s ease-out;
+  font-weight: 600;
+}
+
+.case-marker.is-visible {
+  background-size: 100% 100%;
+}
+
+/* ===== 画像 ===== */
+.case-answer img,
+.case-content img,
 .single-case .article-content img {
+  display: block;
+  margin: 2rem auto;
   max-width: 100%;
   height: auto;
-  margin: 1.8rem 0;
+  border-radius: 6px;
+}
+
+/* ===== YouTube埋め込み ===== */
+.case-content iframe,
+.case-answer iframe,
+.single-case .article-content iframe {
   display: block;
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  margin: 2rem auto;
+  border-radius: 8px;
+  border: none;
+}
+
+/* ===== 質問見出し ===== */
+.case-question {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-dark);
+  margin-top: 2.5rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.7;
+  background: var(--color-bg-alt);
+  padding: 0.8rem 1rem;
+  border-left: 4px solid var(--color-primary);
   border-radius: 4px;
 }
 
-.single-case .article-content img.size-medium {
-  max-width: 50%;
+/* ===== 発言者名 ===== */
+.speaker-name {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-right: 0.3em;
 }
 
-.single-case .article-content img.size-thumbnail {
-  max-width: 25%;
+/* =========================================================
+   リスト
+========================================================= */
+
+/* ===== 箇条書き ===== */
+.single-case .article-content ul {
+  list-style: disc;
+  margin: 1.5rem 0 2rem;
+  padding-left: 1.5rem;
 }
 
+.single-case .article-content ul ul {
+  list-style: circle;
+  margin-top: 0.5rem;
+}
+
+.single-case .article-content li {
+  margin-bottom: 0.6rem;
+  line-height: 1.8;
+}
+
+/* ===== 番号付きリスト ===== */
+.single-case .article-content ol {
+  list-style: decimal;
+  margin: 1.5rem 0 2rem;
+  padding-left: 1.5rem;
+}
+
+.single-case .article-content ol li {
+  margin-bottom: 0.6rem;
+  line-height: 1.8;
+}
 
 /* =========================================================
    テーブル
@@ -109,7 +362,6 @@ body.single-case {
 .single-case table {
   border-collapse: collapse;
   width: 100%;
-  table-layout: fixed;
   border: 1px solid var(--color-gray-4);
   margin: 2rem 0;
   font-size: 1rem;
@@ -117,10 +369,10 @@ body.single-case {
 
 .single-case th,
 .single-case td {
-  padding: 10px;
+  padding: 12px;
   border: 1px solid var(--color-gray-4);
   vertical-align: top;
-  word-break: break-word;
+  text-align: left;
 }
 
 .single-case thead th {
@@ -132,64 +384,6 @@ body.single-case {
   background: var(--color-gray-1);
 }
 
-
-/* =========================================================
-   箇条書き
-========================================================= */
-.single-case ul {
-  list-style: disc;
-  margin: 1.5rem 0 2rem;
-  padding-left: 2rem;
-}
-
-.single-case ul ul {
-  list-style: circle;
-  margin-top: 0.5rem;
-}
-
-.single-case li {
-  margin-bottom: .6rem;
-}
-
-
-/* =========================================================
-   番号付きリスト
-========================================================= */
-.single-case ol {
-  list-style: none;
-  counter-reset: list-counter;
-  margin: 2rem 0;
-  padding: 0;
-}
-
-.single-case ol li {
-  position: relative;
-  counter-increment: list-counter;
-  padding: 12px 16px 12px 48px;
-  border: 1px solid var(--color-gray-4);
-  background: var(--color-gray-0);
-  margin-bottom: 1rem;
-  border-radius: 6px;
-}
-
-.single-case ol li::before {
-  content: counter(list-counter);
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  color: #fff;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
 /* =========================================================
    一覧に戻る
 ========================================================= */
@@ -200,14 +394,14 @@ body.single-case {
 
 .single-case .back-to-archive-link {
   display: inline-block;
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 600;
-  padding: 12px 24px;
-  border-radius: 4px;
-  border: 1px solid var(--color-primary);
+  padding: 14px 32px;
+  border-radius: 6px;
+  border: 2px solid var(--color-primary);
   color: var(--color-primary);
   text-decoration: none;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .single-case .back-to-archive-link:hover {
@@ -215,124 +409,91 @@ body.single-case {
   color: #fff;
 }
 
-
-/* =========================================================
-   導入事例：2カラムレイアウト
-========================================================= */
-.case-2col {
-  display: flex;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 24px;
-  box-sizing: border-box;
-}
-
-.case-main {
-  flex: 1 1 65%;
-  min-width: 0;
-}
-
-.case-sidebar {
-  flex: 1 1 30%;
-  min-width: 260px;
-}
-
-.case-sidebar-box {
-  background: var(--color-bg);
-  border: 1px solid var(--color-gray-4);
-  padding: 24px;
-  border-radius: 6px;
-}
-
-.case-sidebar-box .sidebar-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid var(--color-primary);
-  padding-bottom: .3rem;
-}
-
-
-/* ===== 企業ロゴ ===== */
-.case-logo {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--color-gray-3);
-}
-
-.case-logo img {
-  max-width: 180px;
-  height: auto;
-}
-
-/* ===== 企業概要（メタボックス） ===== */
-.case-info-list {
-  margin: 0;
-}
-
-.case-info-item {
-  display: flex;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.case-info-item dt {
-  flex-shrink: 0;
-  width: 5em;
-  font-weight: 700;
-  color: var(--color-gray-7);
-}
-
-.case-info-item dd {
-  margin: 0;
-  flex: 1;
-}
-
-/* モバイル：1カラム */
-@media (max-width: 768px) {
-  .case-2col {
-    flex-direction: column;
-    gap: 32px;
-  }
-}
-
-
 /* =========================================================
    画像2枚横並びコンポーネント
 ========================================================= */
 .rcp-case-image-two {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
-  margin: 2rem 0;
+  margin: 24px 0;
 }
 
 .rcp-case-image-two figure {
-  flex: 1;
   margin: 0;
-  height: 400px;
-  overflow: hidden;
-  border-radius: 4px;
 }
 
 .rcp-case-image-two figure img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  margin: 0;
+  height: auto;
+  display: block;
+  border-radius: 6px;
 }
 
-/* モバイル：縦並び */
-@media (max-width: 768px) {
-  .rcp-case-image-two {
+/* =========================================================
+   CTA バナー
+========================================================= */
+.case-study-banner-sp {
+  display: none;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media screen and (max-width: 1024px) {
+  .case-2col {
     flex-direction: column;
-    gap: 12px;
   }
 
-  .rcp-case-image-two figure {
-    height: 300px;
+  .case-main,
+  .case-sidebar {
+    width: 100%;
+    flex: none;
+  }
+
+  .case-sidebar-box {
+    position: static;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .case-2col {
+    padding: 0 16px 60px;
+  }
+
+  .case-article {
+    padding: 1.5rem;
+  }
+
+  .single-case .page-title {
+    font-size: 1.5rem;
+  }
+
+  .interview-lead {
+    font-size: 1rem;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .single-case .article-content h2,
+  h2.case {
+    font-size: 1.3rem;
+  }
+
+  .single-case .article-content h3 {
+    font-size: 1.1rem;
+  }
+
+  /* 画像2枚：縦並び */
+  .rcp-case-image-two {
+    grid-template-columns: 1fr;
+  }
+
+  /* CTAバナー */
+  .case-study-banner-pc {
+    display: none;
+  }
+
+  .case-study-banner-sp {
+    display: block;
   }
 }
