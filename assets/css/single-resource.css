@@ -292,31 +292,41 @@
 }
 
 /* ------------------------------
-   HubSpotフォーム埋め込み対応
+   Pardotフォーム埋め込み対応
 ------------------------------ */
 .form-embed iframe {
   width: 100% !important;
-  min-height: 500px;
+  min-height: 600px;
+  border: none;
 }
 
-.form-embed .hs-form {
+.form-embed form {
   font-family: inherit;
 }
 
-.form-embed .hs-form-field {
+.form-embed .form-field,
+.form-embed .pd-text,
+.form-embed .pd-select {
   margin-bottom: 16px;
 }
 
-.form-embed .hs-input {
+.form-embed input[type="text"],
+.form-embed input[type="email"],
+.form-embed input[type="tel"],
+.form-embed select,
+.form-embed textarea {
   width: 100% !important;
   padding: 12px 14px !important;
   border: 1px solid #ccc !important;
   border-radius: 6px !important;
   font-size: 15px !important;
+  box-sizing: border-box !important;
 }
 
-.form-embed .hs-button {
+.form-embed input[type="submit"],
+.form-embed button[type="submit"] {
   background-color: #EA526F !important;
+  color: #fff !important;
   border: none !important;
   border-radius: 8px !important;
   padding: 14px 24px !important;
@@ -326,7 +336,8 @@
   width: 100% !important;
 }
 
-.form-embed .hs-button:hover {
+.form-embed input[type="submit"]:hover,
+.form-embed button[type="submit"]:hover {
   background-color: #d1445e !important;
 }
 
