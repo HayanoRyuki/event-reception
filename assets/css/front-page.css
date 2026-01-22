@@ -174,11 +174,12 @@ svg {
 .l-main {
   overflow: hidden;
   width: 100%;
-  margin-top: 9.4rem;
+  padding-top: 9.4rem; /* ヘッダー高さ分 - absoluteヘッダー用 */
+  margin-top: 0;
 }
 @media screen and (max-width: 767px) {
   .l-main {
-    margin-top: 8rem;
+    padding-top: 8rem;
   }
 }
 
