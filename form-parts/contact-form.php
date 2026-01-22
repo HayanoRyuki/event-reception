@@ -1,50 +1,51 @@
 <?php
 /**
- * 共通パーツ：資料請求フォーム
- * ページごとに資料タイトル・IDを自動でPOST送信
+ * 共通パーツ：お問い合わせフォーム
+ * 資料請求フォーム + お問い合わせ内容（自由記述）
  */
 
 // ページ情報の自動取得
-$document_title = get_the_title();
-$document_id    = get_the_ID();
+$page_title = get_the_title();
+$page_id    = get_the_ID();
 ?>
 
-<form class="request-form" method="post" action="#">
+<form class="contact-form request-form" method="post" action="#">
 
   <!-- 自動識別用 hidden -->
-  <input type="hidden" name="document_title" value="<?php echo esc_attr($document_title); ?>">
-  <input type="hidden" name="document_id" value="<?php echo esc_attr($document_id); ?>">
+  <input type="hidden" name="page_title" value="<?php echo esc_attr($page_title); ?>">
+  <input type="hidden" name="page_id" value="<?php echo esc_attr($page_id); ?>">
   <input type="hidden" name="referer" value="<?php echo esc_url($_SERVER['HTTP_REFERER'] ?? ''); ?>">
+  <input type="hidden" name="form_type" value="contact">
 
   <div class="form-row">
-    <label for="company">貴社名</label>
-    <input type="text" id="company" name="company" required>
+    <label for="contact_company">貴社名 <span class="required">*</span></label>
+    <input type="text" id="contact_company" name="company" required>
   </div>
 
   <div class="form-row">
-    <label for="department">部署</label>
-    <input type="text" id="department" name="department">
+    <label for="contact_department">部署</label>
+    <input type="text" id="contact_department" name="department">
   </div>
 
   <div class="form-row name-row">
     <div>
-      <label for="lastname">姓</label>
-      <input type="text" id="lastname" name="lastname" required>
+      <label for="contact_lastname">姓 <span class="required">*</span></label>
+      <input type="text" id="contact_lastname" name="lastname" required>
     </div>
     <div>
-      <label for="firstname">名</label>
-      <input type="text" id="firstname" name="firstname" required>
+      <label for="contact_firstname">名 <span class="required">*</span></label>
+      <input type="text" id="contact_firstname" name="firstname" required>
     </div>
   </div>
 
   <div class="form-row">
-    <label for="email">メールアドレス</label>
-    <input type="email" id="email" name="email" required>
+    <label for="contact_email">メールアドレス <span class="required">*</span></label>
+    <input type="email" id="contact_email" name="email" required>
   </div>
 
   <div class="form-row">
-    <label for="tel">電話番号</label>
-    <input type="tel" id="tel" name="tel">
+    <label for="contact_tel">電話番号</label>
+    <input type="tel" id="contact_tel" name="tel">
   </div>
 
   <div class="form-row">
@@ -82,6 +83,11 @@ $document_id    = get_the_ID();
       <option value="1001人以上">1001人以上</option>
       <option value="未定">未定</option>
     </select>
+  </div>
+
+  <div class="form-row">
+    <label for="contact_message">お問い合わせ内容</label>
+    <textarea id="contact_message" name="message" rows="5" placeholder="ご質問やご要望がございましたらご記入ください"></textarea>
   </div>
 
   <div class="form-row check-row">
