@@ -33,7 +33,6 @@
         while ($case_query->have_posts()) : $case_query->the_post();
           $img_class = 'img0' . $counter;
           $thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large');
-          $company_logo = get_field('company_logo'); // ACFでロゴを取得（ある場合）
       ?>
 
       <a href="<?php the_permalink(); ?>" class="p-case-study__item">
@@ -60,15 +59,9 @@
 
           <div class="p-case-study__item-company">
             <div class="p-case-study__item-logo">
-              <?php if ($company_logo) : ?>
-              <img src="<?php echo esc_url($company_logo['url']); ?>"
-                   loading="lazy"
-                   alt="<?php echo esc_attr($company_logo['alt']); ?>">
-              <?php else : ?>
               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.webp"
                    loading="lazy"
                    alt="<?php the_title_attribute(); ?>">
-              <?php endif; ?>
             </div>
           </div>
 
