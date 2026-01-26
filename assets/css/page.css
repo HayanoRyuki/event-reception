@@ -180,3 +180,83 @@ body {
 .page-contact .c-button:hover {
   background: var(--color-primary-hover);
 }
+
+
+/* ========================================
+   サンクスページ
+======================================== */
+
+.page-thanks {
+  padding: 6rem 0;
+}
+
+.page-thanks .container {
+  max-width: 720px;
+  text-align: center;
+}
+
+.page-thanks .page-header {
+  margin-bottom: 3rem;
+}
+
+.page-thanks .page-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.page-thanks .thanks-content {
+  background: #fff;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.page-thanks .thanks-message {
+  font-size: 1.6rem;
+  line-height: 1.9;
+  margin-bottom: 2rem;
+}
+
+.page-thanks .thanks-notice {
+  background: var(--color-gray-1, #f5f5f5);
+  padding: 1.5rem;
+  border-radius: 6px;
+  margin-bottom: 2.5rem;
+}
+
+.page-thanks .thanks-notice p {
+  font-size: 1.4rem;
+  color: var(--color-gray-6, #666);
+  margin: 0;
+  line-height: 1.7;
+}
+
+.page-thanks .thanks-action {
+  margin-top: 2rem;
+}
+
+.page-thanks .c-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 200px;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.page-thanks .c-button--outline {
+  background: #fff;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.page-thanks .c-button--outline:hover {
+  background: var(--color-primary);
+  color: #fff;
+}

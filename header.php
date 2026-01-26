@@ -93,7 +93,7 @@
       </ul>
 
       <div class="l-header__nav-cta">
-        <a class="c-button__header--frame" href="https://forms.gle/e4hNdW9Hors8DYQ16" target="_blank">
+        <a class="c-button__header--frame" href="/resource/document/">
           資料をダウンロード
         </a>
         <a class="c-button__header" href="https://app.receptionist.jp/sign_in">
