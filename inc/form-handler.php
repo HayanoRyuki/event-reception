@@ -65,8 +65,8 @@ function handle_form_submission() {
 
     // サンクスページURL
     $thanks_url = ($form_type === 'contact')
-        ? home_url('/thanks-contact/')
-        : home_url('/thanks-request/');
+        ? home_url('/contact-thanks/')
+        : home_url('/resource-thanks/');
 
     wp_send_json_success([
         'message'     => '送信が完了しました',
