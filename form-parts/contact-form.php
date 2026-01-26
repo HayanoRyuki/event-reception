@@ -78,8 +78,8 @@ $page_id    = get_the_ID();
     <select name="event_size">
       <option value="">選択してください</option>
       <option value="〜100人">〜100人</option>
-      <option value="101〜300人">101〜300人</option>
-      <option value="301〜1000人">301〜1000人</option>
+      <option value="〜300人">〜300人</option>
+      <option value="〜1000人">〜1000人</option>
       <option value="1001人以上">1001人以上</option>
       <option value="未定">未定</option>
     </select>

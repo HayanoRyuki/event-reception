@@ -12,7 +12,8 @@ $document_id    = get_the_ID();
 <form class="request-form" method="post" action="#">
 
   <!-- 自動識別用 hidden -->
-  <input type="hidden" name="document_title" value="<?php echo esc_attr($document_title); ?>">
+  <input type="hidden" name="form_type" value="request">
+  <input type="hidden" name="page_title" value="<?php echo esc_attr($document_title); ?>">
   <input type="hidden" name="document_id" value="<?php echo esc_attr($document_id); ?>">
   <input type="hidden" name="referer" value="<?php echo esc_url($_SERVER['HTTP_REFERER'] ?? ''); ?>">
 
