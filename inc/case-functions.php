@@ -230,9 +230,17 @@ function render_case_external_preview_box($post) {
   // 現在時刻が有効期限内かどうか
   $is_valid = $token && $expires && time() < intval($expires);
 
-  // add_query_arg を使って安全にURL生成
+  // Public Post Preview方式のURL生成
   $url = $is_valid
-    ? add_query_arg('external_preview', $token, get_permalink($post))
+    ? add_query_arg(
+        array(
+          'p'                => $post->ID,
+          'post_type'        => 'case',
+          'preview'          => 'true',
+          'external_preview' => $token,
+        ),
+        home_url('/')
+      )
     : '';
   ?>
   <p>
@@ -292,11 +300,16 @@ add_action('wp_ajax_generate_case_external_preview', function () {
   update_post_meta($post_id, '_external_preview_token', $token);
   update_post_meta($post_id, '_external_preview_expires', $expires);
 
-  // add_query_arg でURL生成を統一
+  // Public Post Preview方式のURL生成
+  // home_url + ?p=ID&post_type=case&preview=true&external_preview=token
   $url = add_query_arg(
-    'external_preview',
-    $token,
-    get_permalink($post_id)
+    array(
+      'p'                => $post_id,
+      'post_type'        => 'case',
+      'preview'          => 'true',
+      'external_preview' => $token,
+    ),
+    home_url('/')
   );
 
   wp_send_json_success(['url' => $url]);

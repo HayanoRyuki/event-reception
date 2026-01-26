@@ -107,11 +107,11 @@ html {
 /* スクロール設定
 ***************************************************************/
 html {
-  scroll-padding-top: 9.4rem;
+  scroll-padding-top: 7rem;
 }
 @media screen and (max-width: 767px) {
   html {
-    scroll-padding-top: 8rem;
+    scroll-padding-top: 6rem;
   }
 }
 
@@ -174,8 +174,13 @@ svg {
 .l-main {
   overflow: hidden;
   width: 100%;
-  padding-top: 0; /* JSで動的に設定 */
+  padding-top: 7rem; /* ヘッダー高さ分 - absoluteヘッダー用 */
   margin-top: 0;
+}
+@media screen and (max-width: 767px) {
+  .l-main {
+    padding-top: 6rem;
+  }
 }
 
 /* 共通inner

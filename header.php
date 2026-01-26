@@ -87,13 +87,12 @@
         <li><a href="#flow">利用フロー</a></li>
         <li><a href="#use-case">ユースケース</a></li>
         <li><a href="#merit">導入メリット</a></li>
-        <li><a href="#case-study">導入事例</a></li>
         <li><a href="#plan">料金プラン</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
 
       <div class="l-header__nav-cta">
-        <a class="c-button__header--frame" href="/resource/document/">
+        <a class="c-button__header--frame" href="https://forms.gle/e4hNdW9Hors8DYQ16" target="_blank">
           資料をダウンロード
         </a>
         <a class="c-button__header" href="https://app.receptionist.jp/sign_in">

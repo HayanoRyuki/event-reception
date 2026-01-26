@@ -140,6 +140,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!main || !header) return;
 
+  // ヘッダーがfixedの場合のみpadding-topを設定（absoluteの場合は不要）
+  const headerPosition = getComputedStyle(header).position;
+  if (headerPosition !== "fixed") return;
+
   const setMainPadding = () => {
     const headerHeight = header.offsetHeight;
     main.style.paddingTop = `${headerHeight}px`;
