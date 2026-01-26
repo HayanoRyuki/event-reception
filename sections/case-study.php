@@ -39,9 +39,9 @@
           $logo_url = $logo_id ? wp_get_attachment_image_url($logo_id, 'medium') : '';
       ?>
 
-      <a href="<?php the_permalink(); ?>" class="p-case-study__card">
+      <div class="p-case-study__card">
 
-        <div class="p-case-study__card-img <?php echo esc_attr($img_class); ?>">
+        <a href="<?php the_permalink(); ?>" class="p-case-study__card-img <?php echo esc_attr($img_class); ?>">
           <?php if ($thumbnail) : ?>
           <img
             src="<?php echo esc_url($thumbnail); ?>"
@@ -53,7 +53,7 @@
             loading="lazy"
             alt="<?php the_title_attribute(); ?>">
           <?php endif; ?>
-        </div>
+        </a>
 
         <div class="p-case-study__card-body">
 
@@ -73,8 +73,12 @@
             <?php endif; ?>
           </div>
 
+          <a href="<?php the_permalink(); ?>" class="p-case-study__card-link">
+            この記事を読む
+          </a>
+
         </div>
-      </a>
+      </div>
 
       <?php
           $counter++;
