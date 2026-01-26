@@ -21,26 +21,29 @@ get_header();
         <?php while (have_posts()) : the_post(); ?>
           <article id="post-<?php the_ID(); ?>" <?php post_class('case-article'); ?>>
 
-            <!-- ▼ アイキャッチ -->
-            <div class="thumb">
-              <a href="<?php the_permalink(); ?>">
-                <?php if (has_post_thumbnail()) : ?>
-                  <?php the_post_thumbnail('large'); ?>
-                <?php else : ?>
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icatch.png" alt="導入事例のサムネイル">
-                <?php endif; ?>
+            <!-- アイキャッチ -->
+            <a href="<?php the_permalink(); ?>" class="thumb">
+              <?php if (has_post_thumbnail()) : ?>
+                <?php the_post_thumbnail('large'); ?>
+              <?php else : ?>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_case-study-placeholder.webp" alt="<?php the_title_attribute(); ?>">
+              <?php endif; ?>
+            </a>
+
+            <!-- カード本文 -->
+            <div class="card-body">
+              <h2 class="case-title">
+                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+              </h2>
+
+              <p class="case-excerpt">
+                <?php echo wp_trim_words(get_the_excerpt(), 60, '...'); ?>
+              </p>
+
+              <a href="<?php the_permalink(); ?>" class="case-read-more">
+                この記事を読む
               </a>
             </div>
-
-            <!-- ▼ タイトル -->
-            <h2 class="case-title">
-              <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-            </h2>
-
-            <!-- ▼ 抜粋 -->
-            <p class="case-excerpt">
-              <?php echo wp_trim_words(get_the_excerpt(), 32); ?>
-            </p>
 
           </article>
         <?php endwhile; ?>
