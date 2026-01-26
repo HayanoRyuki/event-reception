@@ -14,7 +14,7 @@ define('SLACK_WEBHOOK_CONTACT', '');  // お問い合わせ用: #contact-event
 
 // Pardotフォームハンドラー
 define('PARDOT_ENDPOINT_REQUEST', 'https://t.receptionist.jp/l/436112/2026-01-25/8m98g4'); // 資料請求用
-define('PARDOT_ENDPOINT_CONTACT', ''); // お問い合わせ用（後で設定）
+define('PARDOT_ENDPOINT_CONTACT', 'https://t.receptionist.jp/l/436112/2026-01-26/8m98gm'); // お問い合わせ用
 
 // ============================================
 // Ajaxエンドポイント登録
