@@ -87,6 +87,7 @@
         <li><a href="#flow">利用フロー</a></li>
         <li><a href="#use-case">ユースケース</a></li>
         <li><a href="#merit">導入メリット</a></li>
+        <li><a href="#case-study">導入事例</a></li>
         <li><a href="#plan">料金プラン</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
