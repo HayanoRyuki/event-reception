@@ -9,7 +9,7 @@
 // ============================================
 // 設定値（Webhook URL / Pardot Endpoint）
 // ============================================
-define('SLACK_WEBHOOK_REQUEST', 'https://hooks.slack.com/services/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');  // 資料請求用: #cv-doc-event
+define('SLACK_WEBHOOK_REQUEST', 'https://hooks.slack.com/services/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');  // 資料請求用: #cv-doc-event
 define('SLACK_WEBHOOK_CONTACT', 'https://hooks.slack.com/services/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');  // お問い合わせ用: #contact-event
 
 // Pardotフォームハンドラー
