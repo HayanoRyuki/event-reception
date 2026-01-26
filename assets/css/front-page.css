@@ -1575,6 +1575,72 @@ svg {
   }
 }
 
+/* 導入事例：横並び2カラムカード版 */
+.p-case-study__container--grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+@media screen and (max-width: 767px) {
+  .p-case-study__container--grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.p-case-study__card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transition: opacity 0.3s ease;
+}
+@media (any-hover: hover) {
+  .p-case-study__card:hover {
+    opacity: 0.7;
+  }
+}
+
+.p-case-study__card-img {
+  border-radius: 2rem;
+  overflow: hidden;
+  width: 100%;
+}
+.p-case-study__card-img img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+}
+
+.p-case-study__card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.p-case-study__card-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0em;
+  color: #413C3A;
+}
+@media screen and (max-width: 767px) {
+  .p-case-study__card-title {
+    font-size: 1.5rem;
+  }
+}
+
+.p-case-study__card-logo {
+  width: 18rem;
+  height: 4rem;
+}
+.p-case-study__card-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+
 /* 料金プラン
 ***************************************************************/
 .p-plan {

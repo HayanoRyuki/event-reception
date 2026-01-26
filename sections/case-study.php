@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <div class="p-case-study__container">
+    <div class="p-case-study__container p-case-study__container--grid">
 
       <?php
       // カスタム投稿タイプ「case」から最新2件を取得
@@ -33,11 +33,15 @@
         while ($case_query->have_posts()) : $case_query->the_post();
           $img_class = 'img0' . $counter;
           $thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large');
+
+          // ロゴ画像を取得（メタフィールドから）
+          $logo_id = get_post_meta(get_the_ID(), '_case_logo_image_id', true);
+          $logo_url = $logo_id ? wp_get_attachment_image_url($logo_id, 'medium') : '';
       ?>
 
-      <a href="<?php the_permalink(); ?>" class="p-case-study__item">
+      <a href="<?php the_permalink(); ?>" class="p-case-study__card">
 
-        <div class="p-case-study__item-img <?php echo esc_attr($img_class); ?>">
+        <div class="p-case-study__card-img <?php echo esc_attr($img_class); ?>">
           <?php if ($thumbnail) : ?>
           <img
             src="<?php echo esc_url($thumbnail); ?>"
@@ -51,18 +55,22 @@
           <?php endif; ?>
         </div>
 
-        <div class="p-case-study__item-body">
+        <div class="p-case-study__card-body">
 
-          <h3 class="p-case-study__item-title">
+          <h3 class="p-case-study__card-title">
             <?php the_title(); ?>
           </h3>
 
-          <div class="p-case-study__item-company">
-            <div class="p-case-study__item-logo">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.webp"
-                   loading="lazy"
-                   alt="<?php the_title_attribute(); ?>">
-            </div>
+          <div class="p-case-study__card-logo">
+            <?php if ($logo_url) : ?>
+            <img src="<?php echo esc_url($logo_url); ?>"
+                 loading="lazy"
+                 alt="<?php the_title_attribute(); ?>">
+            <?php else : ?>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.webp"
+                 loading="lazy"
+                 alt="<?php the_title_attribute(); ?>">
+            <?php endif; ?>
           </div>
 
         </div>
