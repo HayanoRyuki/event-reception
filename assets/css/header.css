@@ -260,25 +260,9 @@
     font-size: 14px;
   }
 
-  /* オーバーレイ */
+  /* オーバーレイ（無効化） */
   .l-header__overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 998 !important;
-    pointer-events: none;
-  }
-
-  .l-header__overlay.is-visible {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+    display: none !important;
   }
 }
 
