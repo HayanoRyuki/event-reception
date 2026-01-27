@@ -184,6 +184,7 @@
     border: none;
     cursor: pointer;
     z-index: 1001;
+    margin-left: auto;
   }
 
   .l-header__hamburger-line {
@@ -210,25 +211,25 @@
 
   /* モバイルナビゲーション */
   .l-header__nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    max-width: 320px;
-    height: 100vh;
-    background: #fff;
-    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
-    padding: 80px 24px 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    transition: right 0.3s ease;
-    overflow-y: auto;
-    z-index: 1000;
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important;
+    width: 80% !important;
+    max-width: 320px !important;
+    height: 100vh !important;
+    background: #fff !important;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1) !important;
+    padding: 80px 24px 40px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+    transition: right 0.3s ease !important;
+    overflow-y: auto !important;
+    z-index: 1000 !important;
   }
 
   .l-header__nav.is-open {
-    right: 0;
+    right: 0 !important;
   }
 
   .l-header__nav-list {
