@@ -114,9 +114,8 @@
         <ul class="l-header__nav-list">
           <li><a href="<?php echo esc_url(home_url('/')); ?>">TOP</a></li>
           <li><a href="<?php echo esc_url(home_url('/case/')); ?>">導入事例</a></li>
-          <li><a href="<?php echo esc_url(home_url('/resource/')); ?>">資料一覧</a></li>
+          <li><a href="<?php echo esc_url(home_url('/resource/document/')); ?>">資料請求</a></li>
           <li><a href="<?php echo esc_url(home_url('/help/')); ?>">ヘルプ一覧</a></li>
-          <li><a href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a></li>
         </ul>
         <div class="l-header__nav-cta">
           <a class="c-button__header" href="https://app.receptionist.jp/sign_in">
