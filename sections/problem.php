@@ -49,8 +49,8 @@
       <div class="p-problem__card">
         <div class="p-problem__card-img">
           <picture>
-            <source media="(min-width: 768px)" srcset="/wp-content/uploads/2025/10/pixta_130124148_XL.jpg">
-            <img src="/wp-content/uploads/2025/10/pixta_130124148_XL.jpg" loading="lazy" alt="" width="260" height="261">
+            <source media="(min-width: 768px)" srcset="<?php echo get_template_directory_uri(); ?>/assets/img/img_problem03--pc.webp">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_problem03--sp.webp" loading="lazy" alt="" width="260" height="261">
           </picture>
         </div>
         <div class="p-problem__card-body">
