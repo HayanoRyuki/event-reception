@@ -121,6 +121,79 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 /* ===================================================
+ハンバーガーメニュー（モバイル用）
+=====================================================*/
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector(".l-header__hamburger");
+  const nav = document.querySelector(".l-header__nav");
+  const overlay = document.querySelector(".l-header__overlay");
+  const navLinks = document.querySelectorAll(".l-header__nav-list a");
+
+  if (!hamburger || !nav) return;
+
+  // メニューを開く/閉じる
+  function toggleMenu() {
+    const isOpen = nav.classList.contains("is-open");
+
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+  function openMenu() {
+    hamburger.classList.add("is-active");
+    hamburger.setAttribute("aria-expanded", "true");
+    hamburger.setAttribute("aria-label", "メニューを閉じる");
+    nav.classList.add("is-open");
+    if (overlay) overlay.classList.add("is-visible");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMenu() {
+    hamburger.classList.remove("is-active");
+    hamburger.setAttribute("aria-expanded", "false");
+    hamburger.setAttribute("aria-label", "メニューを開く");
+    nav.classList.remove("is-open");
+    if (overlay) overlay.classList.remove("is-visible");
+    document.body.style.overflow = "";
+  }
+
+  // ハンバーガーボタンクリック
+  hamburger.addEventListener("click", toggleMenu);
+
+  // オーバーレイクリックで閉じる
+  if (overlay) {
+    overlay.addEventListener("click", closeMenu);
+  }
+
+  // ナビリンククリックで閉じる（ページ内リンク用）
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      // 960px以下のときのみ閉じる
+      if (window.innerWidth <= 960) {
+        closeMenu();
+      }
+    });
+  });
+
+  // ESCキーで閉じる
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && nav.classList.contains("is-open")) {
+      closeMenu();
+    }
+  });
+
+  // リサイズ時にメニューを閉じる（PC幅になったとき）
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 960 && nav.classList.contains("is-open")) {
+      closeMenu();
+    }
+  });
+});
+
+/* ===================================================
 ヘッダー高さを正確に取得して本文に余白を追加（全ページ対応）
 =====================================================*/
 document.addEventListener("DOMContentLoaded", function () {

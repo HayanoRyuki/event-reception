@@ -70,6 +70,7 @@
 <?php wp_body_open(); ?>
 
 <!-- header -->
+<div class="l-header__overlay"></div>
 <header class="l-header">
   <div class="l-header__inner">
     <a href="/" class="l-header__logo">
@@ -81,25 +82,48 @@
         height="104">
     </a>
 
-    <nav class="l-header__nav">
-      <ul class="l-header__nav-list">
-        <li><a href="#problem">よくある課題</a></li>
-        <li><a href="#flow">利用フロー</a></li>
-        <li><a href="#use-case">ユースケース</a></li>
-        <li><a href="#merit">導入メリット</a></li>
-        <li><a href="#case-study">導入事例</a></li>
-        <li><a href="#plan">料金プラン</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
+    <!-- ハンバーガーメニューボタン（モバイル用） -->
+    <button class="l-header__hamburger" type="button" aria-label="メニューを開く" aria-expanded="false">
+      <span class="l-header__hamburger-line"></span>
+      <span class="l-header__hamburger-line"></span>
+      <span class="l-header__hamburger-line"></span>
+    </button>
 
-      <div class="l-header__nav-cta">
-        <a class="c-button__header--frame" href="/resource/document/">
-          資料をダウンロード
-        </a>
-        <a class="c-button__header" href="https://app.receptionist.jp/sign_in">
-          無料ではじめる
-        </a>
-      </div>
+    <nav class="l-header__nav">
+      <?php if (is_front_page()) : ?>
+        <!-- TOPページ用メニュー -->
+        <ul class="l-header__nav-list">
+          <li><a href="#problem">よくある課題</a></li>
+          <li><a href="#flow">利用フロー</a></li>
+          <li><a href="#use-case">ユースケース</a></li>
+          <li><a href="#merit">導入メリット</a></li>
+          <li><a href="#case-study">導入事例</a></li>
+          <li><a href="#plan">料金プラン</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <div class="l-header__nav-cta">
+          <a class="c-button__header--frame" href="/resource/document/">
+            資料をダウンロード
+          </a>
+          <a class="c-button__header" href="https://app.receptionist.jp/sign_in">
+            無料ではじめる
+          </a>
+        </div>
+      <?php else : ?>
+        <!-- 下層ページ用メニュー -->
+        <ul class="l-header__nav-list">
+          <li><a href="<?php echo esc_url(home_url('/')); ?>">TOP</a></li>
+          <li><a href="<?php echo esc_url(home_url('/case/')); ?>">導入事例</a></li>
+          <li><a href="<?php echo esc_url(home_url('/resource/')); ?>">資料一覧</a></li>
+          <li><a href="<?php echo esc_url(home_url('/help/')); ?>">ヘルプ一覧</a></li>
+          <li><a href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a></li>
+        </ul>
+        <div class="l-header__nav-cta">
+          <a class="c-button__header" href="https://app.receptionist.jp/sign_in">
+            無料ではじめる
+          </a>
+        </div>
+      <?php endif; ?>
     </nav>
   </div>
 </header>
