@@ -17,6 +17,12 @@ $page_id    = get_the_ID();
   <input type="hidden" name="referer" value="<?php echo esc_url($_SERVER['HTTP_REFERER'] ?? ''); ?>">
   <input type="hidden" name="form_type" value="contact">
 
+  <!-- Honeypot（スパム対策：ボットは自動入力するが人間は見えない） -->
+  <div class="hp-field" aria-hidden="true">
+    <label for="contact_website_url">Website</label>
+    <input type="text" id="contact_website_url" name="website_url" autocomplete="off" tabindex="-1">
+  </div>
+
   <div class="form-row">
     <label for="contact_company">貴社名 <span class="required">*</span></label>
     <input type="text" id="contact_company" name="company" required>

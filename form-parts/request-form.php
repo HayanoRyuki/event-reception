@@ -17,6 +17,12 @@ $document_id    = get_the_ID();
   <input type="hidden" name="document_id" value="<?php echo esc_attr($document_id); ?>">
   <input type="hidden" name="referer" value="<?php echo esc_url($_SERVER['HTTP_REFERER'] ?? ''); ?>">
 
+  <!-- Honeypot（スパム対策：ボットは自動入力するが人間は見えない） -->
+  <div class="hp-field" aria-hidden="true">
+    <label for="website_url">Website</label>
+    <input type="text" id="website_url" name="website_url" autocomplete="off" tabindex="-1">
+  </div>
+
   <div class="form-row">
     <label for="company">貴社名</label>
     <input type="text" id="company" name="company" required>

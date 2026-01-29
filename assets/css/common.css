@@ -341,3 +341,19 @@ svg {
   background:url(../img/icon_button-arrow--white.webp);
 }
 
+
+/* =========================================================
+   Honeypot（スパム対策：人間には見えない）
+========================================================= */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+

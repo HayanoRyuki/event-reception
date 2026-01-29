@@ -29,6 +29,36 @@ function handle_form_submission() {
         return;
     }
 
+    // Honeypot チェック（ボットは隠しフィールドを自動入力する）
+    $honeypot = sanitize_text_field($_POST['website_url'] ?? '');
+    if (!empty($honeypot)) {
+        error_log('Honeypot triggered: ' . $honeypot);
+        // ボットには成功したように見せる（再試行防止）
+        wp_send_json_success([
+            'message'  => '送信が完了しました',
+            'redirect' => home_url('/resource-thanks/'),
+        ]);
+        return;
+    }
+
+    // reCAPTCHA v3 検証
+    if (function_exists('verify_recaptcha_token') && recaptcha_is_configured()) {
+        $recaptcha_token = sanitize_text_field($_POST['recaptcha_token'] ?? '');
+        $recaptcha_result = verify_recaptcha_token($recaptcha_token, 'submit_form');
+
+        if (!$recaptcha_result['success']) {
+            error_log('reCAPTCHA verification failed: ' . print_r($recaptcha_result, true));
+            wp_send_json_error([
+                'message' => 'スパム判定されました。時間をおいて再度お試しください。',
+                'recaptcha' => $recaptcha_result,
+            ]);
+            return;
+        }
+
+        // スコアをログに記録（デバッグ用）
+        error_log('reCAPTCHA score: ' . ($recaptcha_result['score'] ?? 'N/A'));
+    }
+
     // フォームタイプ判定
     $form_type = sanitize_text_field($_POST['form_type'] ?? 'request');
 
