@@ -21,17 +21,11 @@ function recaptcha_is_configured() {
 // ============================================
 // reCAPTCHA v3 スクリプト登録
 // ============================================
-add_action('wp_enqueue_scripts', 'enqueue_recaptcha_scripts');
+add_action('wp_enqueue_scripts', 'enqueue_recaptcha_scripts', 20);
 
 function enqueue_recaptcha_scripts() {
     // 設定がない場合はスキップ
     if (!recaptcha_is_configured()) {
-        return;
-    }
-
-    // フォームがあるページのみで読み込み（最適化）
-    // 全ページで読み込む場合はこの条件を削除
-    if (!is_singular('resource') && !is_page('contact')) {
         return;
     }
 
