@@ -14,7 +14,7 @@
         <a href="/resource/document/" class="c-button__large">資料をダウンロード</a>
       </div>
 
-      <p class="p-fv__notes">クレカ登録不要で、招待枠10人分を無料でお試しいただけます</p>
+      <p class="p-fv__notes">クレカ登録不要で、招待枠10人分を無料でお試しいただけます。</p>
 
     </div>
   </div>
