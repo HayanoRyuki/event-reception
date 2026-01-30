@@ -9,7 +9,7 @@
       </hgroup>
 
       <div class="c-section-head__cta">
-        <a href="https://forms.gle/e4hNdW9Hors8DYQ16" class="c-button__large">事前エントリーに登録</a>
+        <a href="/resource/document/" class="c-button__large">資料をダウンロード</a>
       </div>
     </div>
 
