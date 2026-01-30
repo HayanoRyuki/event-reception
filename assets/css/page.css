@@ -248,6 +248,7 @@ body {
   text-decoration: none;
   border-radius: 6px;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .page-thanks .c-button--outline {
