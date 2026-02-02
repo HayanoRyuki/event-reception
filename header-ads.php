@@ -97,6 +97,9 @@
         <a class="c-button__header--frame" href="/resource/document/">
           資料をダウンロード
         </a>
+        <a class="c-button__header--frame" href="https://event.app.receptionist.jp/">
+          ログイン
+        </a>
         <a class="c-button__header" href="https://app.receptionist.jp/sign_in">
           無料ではじめる
         </a>

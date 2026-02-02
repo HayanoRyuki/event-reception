@@ -105,6 +105,9 @@
           <a class="c-button__header--frame" href="/resource/document/">
             資料をダウンロード
           </a>
+          <a class="c-button__header--frame" href="https://event.app.receptionist.jp/">
+            ログイン
+          </a>
           <a class="c-button__header" href="https://event.app.receptionist.jp/signup">
             無料ではじめる
           </a>
@@ -118,6 +121,9 @@
           <li><a href="<?php echo esc_url(home_url('/help/')); ?>">ヘルプ一覧</a></li>
         </ul>
         <div class="l-header__nav-cta">
+          <a class="c-button__header--frame" href="https://event.app.receptionist.jp/">
+            ログイン
+          </a>
           <a class="c-button__header" href="https://event.app.receptionist.jp/signup">
             無料ではじめる
           </a>
