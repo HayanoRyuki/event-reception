@@ -91,14 +91,12 @@
         <li><a href="#merit">導入メリット</a></li>
         <li><a href="#plan">料金プラン</a></li>
         <li><a href="#faq">FAQ</a></li>
+        <li><a href="https://event.app.receptionist.jp/">ログイン</a></li>
       </ul>
 
       <div class="l-header__nav-cta">
         <a class="c-button__header--frame" href="/resource/document/">
           資料をダウンロード
-        </a>
-        <a class="c-button__header--frame" href="https://event.app.receptionist.jp/">
-          ログイン
         </a>
         <a class="c-button__header" href="https://app.receptionist.jp/sign_in">
           無料ではじめる
