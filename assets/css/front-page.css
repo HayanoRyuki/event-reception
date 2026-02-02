@@ -174,7 +174,7 @@ svg {
 .l-main {
   overflow: hidden;
   width: 100%;
-  padding-top: 7rem; /* ヘッダー高さ分 - absoluteヘッダー用 */
+  padding-top: 7rem; /* ヘッダー高さ分 - fixedヘッダー用 */
   margin-top: 0;
 }
 @media screen and (max-width: 767px) {
@@ -205,7 +205,7 @@ svg {
 ***************************************************************/
 .l-header {
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
