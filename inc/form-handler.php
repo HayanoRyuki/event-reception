@@ -78,10 +78,18 @@ function handle_form_submission() {
         'referer'      => esc_url_raw($_POST['referer'] ?? ''),
     ];
 
-    // 必須項目チェック
+    // 必須項目チェック（共通：会社名、姓、名、メール）
     if (empty($data['company']) || empty($data['lastname']) || empty($data['firstname']) || empty($data['email'])) {
         wp_send_json_error(['message' => '必須項目を入力してください']);
         return;
+    }
+
+    // 資料請求フォームの場合：全項目必須
+    if ($form_type === 'request') {
+        if (empty($data['department']) || empty($data['tel']) || empty($data['event_type']) || empty($data['event_timing']) || empty($data['event_size'])) {
+            wp_send_json_error(['message' => '必須項目を入力してください']);
+            return;
+        }
     }
 
     // 1. Slack通知

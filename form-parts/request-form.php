@@ -24,40 +24,40 @@ $document_id    = get_the_ID();
   </div>
 
   <div class="form-row">
-    <label for="company">貴社名</label>
+    <label for="company">貴社名 <span class="required">*</span></label>
     <input type="text" id="company" name="company" required>
   </div>
 
   <div class="form-row">
-    <label for="department">部署</label>
-    <input type="text" id="department" name="department">
+    <label for="department">部署 <span class="required">*</span></label>
+    <input type="text" id="department" name="department" required>
   </div>
 
   <div class="form-row name-row">
     <div>
-      <label for="lastname">姓</label>
+      <label for="lastname">姓 <span class="required">*</span></label>
       <input type="text" id="lastname" name="lastname" required>
     </div>
     <div>
-      <label for="firstname">名</label>
+      <label for="firstname">名 <span class="required">*</span></label>
       <input type="text" id="firstname" name="firstname" required>
     </div>
   </div>
 
   <div class="form-row">
-    <label for="email">メールアドレス</label>
+    <label for="email">メールアドレス <span class="required">*</span></label>
     <input type="email" id="email" name="email" required>
   </div>
 
   <div class="form-row">
-    <label for="tel">電話番号</label>
-    <input type="tel" id="tel" name="tel">
+    <label for="tel">電話番号 <span class="required">*</span></label>
+    <input type="tel" id="tel" name="tel" required>
   </div>
 
   <div class="form-row">
-    <label>イベントの種類</label>
+    <label>イベントの種類 <span class="required">*</span></label>
     <ul class="radio-list">
-      <li><label><input type="radio" name="event_type" value="社内イベント"> 社内イベント</label></li>
+      <li><label><input type="radio" name="event_type" value="社内イベント" required> 社内イベント</label></li>
       <li><label><input type="radio" name="event_type" value="社外の人を招待する自社イベント"> 社外の人を招待する自社イベント</label></li>
       <li><label><input type="radio" name="event_type" value="保護者等を招待する学校イベント"> 保護者等を招待する学校イベント</label></li>
       <li><label><input type="radio" name="event_type" value="招待制の式典"> 招待制の式典</label></li>
@@ -68,8 +68,8 @@ $document_id    = get_the_ID();
   </div>
 
   <div class="form-row">
-    <label>イベント開催予定時期</label>
-    <select name="event_timing">
+    <label>イベント開催予定時期 <span class="required">*</span></label>
+    <select name="event_timing" required>
       <option value="">選択してください</option>
       <option value="1ヶ月以内">1ヶ月以内</option>
       <option value="3ヶ月以内">3ヶ月以内</option>
@@ -80,8 +80,8 @@ $document_id    = get_the_ID();
   </div>
 
   <div class="form-row">
-    <label>イベント招待人数規模</label>
-    <select name="event_size">
+    <label>イベント招待人数規模 <span class="required">*</span></label>
+    <select name="event_size" required>
       <option value="">選択してください</option>
       <option value="〜100人">〜100人</option>
       <option value="101〜300人">101〜300人</option>
