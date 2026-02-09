@@ -147,8 +147,6 @@ document.addEventListener("DOMContentLoaded", function () {
     hamburger.setAttribute("aria-expanded", "true");
     hamburger.setAttribute("aria-label", "メニューを閉じる");
     nav.classList.add("is-open");
-    if (overlay) overlay.classList.add("is-visible");
-    document.body.style.overflow = "hidden";
   }
 
   function closeMenu() {
@@ -156,8 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
     hamburger.setAttribute("aria-expanded", "false");
     hamburger.setAttribute("aria-label", "メニューを開く");
     nav.classList.remove("is-open");
-    if (overlay) overlay.classList.remove("is-visible");
-    document.body.style.overflow = "";
   }
 
   // ハンバーガーボタンクリック
