@@ -217,9 +217,9 @@
     width: 100%;
     background: #fff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 16px 24px 24px;
+    padding: 10px 24px 16px;
     flex-direction: column;
-    gap: 24px;
+    gap: 14px;
     z-index: 1000;
   }
 
@@ -238,20 +238,20 @@
 
   .l-header__nav-list a {
     display: block;
-    padding: 16px 0;
-    font-size: 15px;
+    padding: 10px 0;
+    font-size: 14px;
   }
 
   .l-header__nav-cta {
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
   }
 
   .c-button__header,
   .c-button__header--frame {
     width: 100%;
-    height: 48px;
-    font-size: 14px;
+    height: 40px;
+    font-size: 13px;
   }
 
   /* オーバーレイ（ドロップダウン方式では不使用） */
