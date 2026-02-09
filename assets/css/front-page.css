@@ -247,7 +247,7 @@ svg {
   justify-content: center;
   gap: 2.9rem;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 960px) {
   .l-header__nav {
     display: none;
   }
