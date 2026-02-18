@@ -22,46 +22,87 @@
         <a href="/resource/document/" class="c-button__large">資料をダウンロード</a>
       </div>
 
-      <p class="c-section-head__text">
-        以下はRECEPTIONISTシリーズご契約中の場合の料金です。<br>
-        招待レセプションのみをご利用いただく場合の料金は、別途お問い合わせください。
-      </p>
-
     </div>
 
-    <div class="p-plan__container js-in-view fade-in-up">
+    <!-- ① RECEPTIONISTシリーズ契約中 -->
+    <div class="p-plan__group js-in-view fade-in-up">
+      <h3 class="p-plan__group-title">RECEPTIONISTシリーズ契約中の企業さま</h3>
 
-      <div class="p-plan__card">
-        <p class="p-plan__card-class">招待枠 <span>50人分</span></p>
+      <div class="p-plan__container">
 
-        <div class="p-plan__card-price">
-          <span class="p-plan__card-price-num">5,000</span>
-          <span class="p-plan__card-price-unit">円</span>
-          <span class="p-plan__card-price-tax">(税別)</span>
+        <div class="p-plan__card">
+          <p class="p-plan__card-class">招待枠 <span>50人分</span></p>
+          <p class="p-plan__card-payment">クレジットカード払い</p>
+          <div class="p-plan__card-price">
+            <span class="p-plan__card-price-yen">¥</span>
+            <span class="p-plan__card-price-num">5,000</span>
+            <span class="p-plan__card-price-tax">(税別)</span>
+          </div>
         </div>
-      </div>
 
-      <div class="p-plan__card">
-        <p class="p-plan__card-class">招待枠 <span>100人分</span></p>
-
-        <div class="p-plan__card-price">
-          <span class="p-plan__card-price-num">9,800</span>
-          <span class="p-plan__card-price-unit">円</span>
-          <span class="p-plan__card-price-tax">(税別)</span>
+        <div class="p-plan__card">
+          <p class="p-plan__card-class">招待枠 <span>100人分</span></p>
+          <p class="p-plan__card-payment">クレジットカード払い</p>
+          <div class="p-plan__card-price">
+            <span class="p-plan__card-price-yen">¥</span>
+            <span class="p-plan__card-price-num">9,800</span>
+            <span class="p-plan__card-price-tax">(税別)</span>
+          </div>
         </div>
-      </div>
 
-      <div class="p-plan__card">
-        <p class="p-plan__card-class">招待枠 <span>500人分</span></p>
-
-        <div class="p-plan__card-price">
-          <span class="p-plan__card-price-num">47,500</span>
-          <span class="p-plan__card-price-unit">円</span>
-          <span class="p-plan__card-price-tax">(税別)</span>
+        <div class="p-plan__card">
+          <p class="p-plan__card-class">招待枠 <span>500人分</span></p>
+          <p class="p-plan__card-payment">クレジットカード / 請求書払い</p>
+          <div class="p-plan__card-price">
+            <span class="p-plan__card-price-yen">¥</span>
+            <span class="p-plan__card-price-num">47,500</span>
+            <span class="p-plan__card-price-tax">(税別)</span>
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
+
+    <!-- ② 上記以外のお客様 -->
+    <div class="p-plan__group p-plan__group--other js-in-view fade-in-up">
+      <h3 class="p-plan__group-title">上記以外のお客様</h3>
+
+      <div class="p-plan__container">
+
+        <div class="p-plan__card">
+          <p class="p-plan__card-class">招待枠 <span>50人分</span></p>
+          <p class="p-plan__card-payment">クレジットカード払い</p>
+          <div class="p-plan__card-price">
+            <span class="p-plan__card-price-yen">¥</span>
+            <span class="p-plan__card-price-num">7,000</span>
+            <span class="p-plan__card-price-tax">(税別)</span>
+          </div>
+        </div>
+
+        <div class="p-plan__card">
+          <p class="p-plan__card-class">招待枠 <span>100人分</span></p>
+          <p class="p-plan__card-payment">クレジットカード払い</p>
+          <div class="p-plan__card-price">
+            <span class="p-plan__card-price-yen">¥</span>
+            <span class="p-plan__card-price-num">13,500</span>
+            <span class="p-plan__card-price-tax">(税別)</span>
+          </div>
+        </div>
+
+        <div class="p-plan__card">
+          <p class="p-plan__card-class">招待枠 <span>500人分</span></p>
+          <p class="p-plan__card-payment">クレジットカード / 請求書払い</p>
+          <div class="p-plan__card-price">
+            <span class="p-plan__card-price-yen">¥</span>
+            <span class="p-plan__card-price-num">65,000</span>
+            <span class="p-plan__card-price-tax">(税別)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <p class="p-plan__note js-in-view fade-in-up">※販売パートナー経由の場合は500人分単位のみでの販売とさせていただいております。</p>
 
   </div>
 </section>
